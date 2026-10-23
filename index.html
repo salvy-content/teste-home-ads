@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<template id="__bundler_thumbnail" data-bg-color="#f7f5f2"><svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg"><rect width="1200" height="800" fill="#f7f5f2"/><text x="600" y="460" text-anchor="middle" font-family="Poppins,sans-serif" font-size="200" font-weight="600" fill="#181410">salvy</text></svg></template>
+<x-dc>
+<helmet>
+<title>Salvy · Operadora móvel para empresas</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Poppins:wght@300;400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
+<link rel="stylesheet" href="ds/colors_and_type.css">
+<script src="ds/_ds_bundle.js"></script>
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#f7f5f2;color:#232323;font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:clip}
+a{color:#232323}
+a:hover{color:#181410}
+input::placeholder{color:#7e7261;opacity:1}
+button{font-family:inherit}
+:focus-visible{outline:2px solid #538bc5;outline-offset:3px}
+@keyframes sv-spin{to{transform:rotate(360deg)}}
+@keyframes sv-blink{0%{opacity:1}50%{opacity:0}}
+@keyframes sv-travel{0%{transform:translateY(-2px);opacity:0}15%{opacity:1}85%{opacity:1}100%{transform:translateY(44px);opacity:0}}
+@keyframes sv-pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.6);opacity:.4}}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+</style>
+</helmet>
+
+<a href="#proposta" style="position:absolute;left:-9999px;top:0;z-index:100;background:#181410;color:#fbfaf9;padding:12px 16px;border-radius:8px" style-focus="left:16px;top:16px">Pular para o formulário</a>
+
+<header style="position:fixed;top:0;left:0;right:0;z-index:50;background:{{ navBg }};-webkit-backdrop-filter:{{ navBlur }};backdrop-filter:{{ navBlur }};border-bottom:1px solid {{ navBorder }};transition:border-color .3s,background .3s">
+  <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+    <a href="#topo" aria-label="Salvy, início" style="display:flex;align-items:center"><img src="assets/logo-salvy.svg" alt="Salvy" style="height:26px;width:auto;display:block"></a>
+    <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+      <nav aria-label="Seções" style="display:flex;gap:28px;align-items:center">
+        <a href="#como-funciona" data-track="nav_como_funciona" style="font:500 14px/1 Inter,sans-serif;color:#4f4a4a;text-decoration:none;padding:6px 0;background-image:linear-gradient(#181410,#181410);background-repeat:no-repeat;background-position:100% 100%;background-size:0% 1.5px;transition:background-size .45s cubic-bezier(.16,1,.3,1),color .25s" style-hover="color:#181410;background-size:100% 1.5px;background-position:0 100%">Como funciona</a>
+        <a href="#produtos" data-track="nav_produtos" style="font:500 14px/1 Inter,sans-serif;color:#4f4a4a;text-decoration:none;padding:6px 0;background-image:linear-gradient(#181410,#181410);background-repeat:no-repeat;background-position:100% 100%;background-size:0% 1.5px;transition:background-size .45s cubic-bezier(.16,1,.3,1),color .25s" style-hover="color:#181410;background-size:100% 1.5px;background-position:0 100%">Produtos</a>
+        <a href="#plataforma" data-track="nav_plataforma" style="font:500 14px/1 Inter,sans-serif;color:#4f4a4a;text-decoration:none;padding:6px 0;background-image:linear-gradient(#181410,#181410);background-repeat:no-repeat;background-position:100% 100%;background-size:0% 1.5px;transition:background-size .45s cubic-bezier(.16,1,.3,1),color .25s" style-hover="color:#181410;background-size:100% 1.5px;background-position:0 100%">Plataforma</a>
+        <a href="#clientes" data-track="nav_clientes" style="font:500 14px/1 Inter,sans-serif;color:#4f4a4a;text-decoration:none;padding:6px 0;background-image:linear-gradient(#181410,#181410);background-repeat:no-repeat;background-position:100% 100%;background-size:0% 1.5px;transition:background-size .45s cubic-bezier(.16,1,.3,1),color .25s" style-hover="color:#181410;background-size:100% 1.5px;background-position:0 100%">Cases</a>
+        <a href="#planos" data-track="nav_planos" style="font:500 14px/1 Inter,sans-serif;color:#4f4a4a;text-decoration:none;padding:6px 0;background-image:linear-gradient(#181410,#181410);background-repeat:no-repeat;background-position:100% 100%;background-size:0% 1.5px;transition:background-size .45s cubic-bezier(.16,1,.3,1),color .25s" style-hover="color:#181410;background-size:100% 1.5px;background-position:0 100%">Planos</a>
+        <a href="#duvidas" data-track="nav_duvidas" style="font:500 14px/1 Inter,sans-serif;color:#4f4a4a;text-decoration:none;padding:6px 0;background-image:linear-gradient(#181410,#181410);background-repeat:no-repeat;background-position:100% 100%;background-size:0% 1.5px;transition:background-size .45s cubic-bezier(.16,1,.3,1),color .25s" style-hover="color:#181410;background-size:100% 1.5px;background-position:0 100%">Dúvidas</a>
+      </nav>
+    </sc-if>
+    <dc-import name="Salvy Button" label="Comece agora" size="sm" track="cta_nav" on-click="{{ goForm }}" hint-size="186px,44px"></dc-import>
+  </div>
+</header>
+
+<main id="topo">
+
+<!-- HERO -->
+<section aria-labelledby="hero-title" style="padding:clamp(104px,12vw,140px) 0 0;background:#f7f5f2">
+  <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-wrap:wrap;gap:clamp(32px,5vw,72px);align-items:flex-start">
+    <div style="flex:1 1 480px;min-width:0;display:flex;flex-direction:column;gap:28px;padding-top:clamp(0px,2vw,28px)">
+      <div data-hero-in="0" style="display:flex;align-items:center;gap:10px;font:500 12px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#534a3d">
+        <span style="width:8px;height:8px;border-radius:50%;background:#4b9b4e;display:block"></span>Operadora móvel para empresas
+      </div>
+      <h1 id="hero-title" data-hero-h1="" style="margin:0;font-family:Poppins,sans-serif;font-weight:500;font-size:clamp(42px,5.4vw,80px);line-height:1.02;letter-spacing:-.035em;color:#181410;text-wrap:balance;max-width:15ch">
+        <sc-if value="{{ hA }}" hint-placeholder-val="{{ true }}">Telefonia corporativa <span style="color:#7e7261">sem 0800, sem fidelidade e sem planilha.</span></sc-if>
+        <sc-if value="{{ hB }}" hint-placeholder-val="{{ false }}">A operadora de celular da sua empresa, <span style="color:#7e7261">num painel só.</span></sc-if>
+        <sc-if value="{{ hC }}" hint-placeholder-val="{{ false }}">Planos de celular para empresas, <span style="color:#7e7261">sem fidelidade e sem 0800.</span></sc-if>
+      </h1>
+      <p data-hero-in="1" style="margin:0;font:400 clamp(17px,1.4vw,20px)/1.55 Inter,sans-serif;color:#4f4a4a;max-width:34em;text-wrap:pretty">Chip, eSIM e número virtual com ativação em minutos. Linhas, consumo e faturas num painel só. E você cancela quando quiser.</p>
+      <ul data-hero-in="2" aria-label="Benefícios" style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;max-width:480px;border-top:1px solid #ddd5c8">
+        <li style="display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid #ddd5c8"><span style="width:36px;height:36px;border-radius:50%;background:#ede9e2;display:grid;place-items:center;color:#181410;flex:none"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3 4 7l4 4M4 7h16M16 21l4-4-4-4M20 17H4"></path></svg></span><span style="display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 10px"><span style="font:500 16px/1.3 Inter,sans-serif;color:#181410">Portabilidade gratuita</span><span style="font:400 14px/1.3 Inter,sans-serif;color:#4f4a4a">Leve os números da empresa</span></span></li>
+        <li style="display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid #ddd5c8"><span style="width:36px;height:36px;border-radius:50%;background:#ede9e2;display:grid;place-items:center;color:#181410;flex:none"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 20h4v-3"></path></svg></span><span style="display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 10px"><span style="font:500 16px/1.3 Inter,sans-serif;color:#181410">eSIM em minutos</span><span style="font:400 14px/1.3 Inter,sans-serif;color:#4f4a4a">Ativação por QR Code</span></span></li>
+        <li style="display:flex;align-items:center;gap:14px;padding:12px 0;"><span style="width:36px;height:36px;border-radius:50%;background:#ede9e2;display:grid;place-items:center;color:#181410;flex:none"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg></span><span style="display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 10px"><span style="font:500 16px/1.3 Inter,sans-serif;color:#181410">Gestão em tempo real</span><span style="font:400 14px/1.3 Inter,sans-serif;color:#4f4a4a">Linhas, consumo e faturas</span></span></li>
+      </ul>
+    </div>
+
+    <!-- HERO FORM (protótipo: em produção, substituído pelo formulário nativo do HubSpot) -->
+    <div ref="{{ heroFormRef }}" style="flex:1 1 380px;max-width:480px;min-width:0;width:100%;margin:0 auto">
+      <div style="background:#181410;border-radius:24px;padding:clamp(22px,2.4vw,32px);color:#fbfaf9;box-shadow:-8px -8px 24px rgba(255,255,255,.5),8px 8px 32px rgba(29,41,57,.24);display:flex;flex-direction:column;gap:24px">
+        <div aria-hidden="true" style="display:flex;flex-direction:column;gap:12px;padding-bottom:22px;border-bottom:1px solid #342c24">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+            <span style="font:500 11px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#c3b5a0">{{ tk.label }}</span>
+            <span style="display:inline-flex;align-items:center;gap:7px;height:24px;padding:0 10px;border-radius:999px;background:{{ tk.bg }};color:{{ tk.fg }};font:500 12px/1 Inter,sans-serif;transition:background .3s,color .3s"><span style="width:6px;height:6px;border-radius:50%;background:currentColor;display:block;animation:sv-pulse 2s infinite"></span>{{ tk.status }}</span>
+          </div>
+          <span style="display:flex;align-items:center;min-height:34px;font:500 clamp(24px,2.4vw,30px)/1 'JetBrains Mono',monospace;letter-spacing:.03em;color:#fbfaf9;white-space:nowrap"><span ref="{{ tkNumRef }}">{{ tk.number }}</span><span style="width:2px;height:26px;margin-left:4px;background:#c3b5a0;display:block;animation:sv-blink 1s steps(1) infinite"></span></span>
+          <span style="font:400 13px/1 Inter,sans-serif;color:#a8a3a3">{{ tk.type }}</span>
+        </div>
+
+        <sc-if value="{{ hf.success }}" hint-placeholder-val="{{ false }}">
+          <div role="status" style="display:flex;flex-direction:column;gap:16px;padding:12px 0 8px">
+            <span style="width:48px;height:48px;border-radius:50%;background:#325332;display:grid;place-items:center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e0ebd6" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span>
+            <h2 style="margin:0;font:500 28px/1.15 Poppins,sans-serif;letter-spacing:-.02em">Recebemos seu contato, {{ hf.first }}.</h2>
+            <p style="margin:0;font:400 16px/1.55 Inter,sans-serif;color:#ddd5c8">Um especialista da Salvy vai falar com você pelo WhatsApp informado para entender sua operação e montar a proposta.</p>
+            <a href="#plataforma" style="display:inline-flex;align-items:center;gap:8px;color:#fbfaf9;font:600 15px/1 Inter,sans-serif;margin-top:4px">Enquanto isso, veja a plataforma em ação<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ hf.open }}" hint-placeholder-val="{{ true }}">
+          <form id="proposta" onSubmit="{{ hf.submit }}" noValidate="{{ true }}" data-form="hero" aria-labelledby="form-title" style="display:flex;flex-direction:column;gap:18px;scroll-margin-top:96px">
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <h2 id="form-title" style="margin:0;font:500 clamp(22px,2vw,26px)/1.2 Poppins,sans-serif;letter-spacing:-.02em;color:#fbfaf9">Receba uma proposta personalizada</h2>
+              <p style="margin:0;font:400 15px/1.5 Inter,sans-serif;color:#ddd5c8">Nosso time entra em contato com você.</p>
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <label for="hero-name" style="font:500 13px/1.3 Inter,sans-serif;color:#ede9e2">Nome completo</label>
+              <div style="position:relative">
+                <input id="hero-name" name="firstname" type="text" autocomplete="name" placeholder="Nome completo" value="{{ hf.name }}" onChange="{{ hf.onName }}" onFocus="{{ hf.focusName }}" onBlur="{{ hf.blurName }}" aria-invalid="{{ hf.nameInvalid }}" aria-describedby="hero-name-msg" style="width:100%;box-sizing:border-box;height:50px;padding:0 44px 0 14px;background:#241e18;border:1px solid {{ hf.nameBorder }};box-shadow:{{ hf.nameRing }};border-radius:8px;color:#fbfaf9;font:400 16px/1 Inter,sans-serif;outline:none;transition:border-color .15s,box-shadow .15s">
+                <sc-if value="{{ hf.nameOk }}"><svg style="position:absolute;right:14px;top:15px" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8fc792" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></sc-if>
+              </div>
+              <sc-if value="{{ hf.nameErr }}"><p id="hero-name-msg" role="alert" style="margin:0;font:500 13px/1.4 Inter,sans-serif;color:#f4b3b4">{{ hf.nameErr }}</p></sc-if>
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <label for="hero-email" style="font:500 13px/1.3 Inter,sans-serif;color:#ede9e2">E-mail corporativo</label>
+              <div style="position:relative">
+                <input id="hero-email" name="email" type="email" inputMode="email" autocomplete="email" placeholder="voce@empresa.com.br" value="{{ hf.email }}" onChange="{{ hf.onEmail }}" onFocus="{{ hf.focusEmail }}" onBlur="{{ hf.blurEmail }}" aria-invalid="{{ hf.emailInvalid }}" aria-describedby="hero-email-msg" style="width:100%;box-sizing:border-box;height:50px;padding:0 44px 0 14px;background:#241e18;border:1px solid {{ hf.emailBorder }};box-shadow:{{ hf.emailRing }};border-radius:8px;color:#fbfaf9;font:400 16px/1 Inter,sans-serif;outline:none;transition:border-color .15s,box-shadow .15s">
+                <sc-if value="{{ hf.emailOk }}"><svg style="position:absolute;right:14px;top:15px" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8fc792" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></sc-if>
+              </div>
+              <sc-if value="{{ hf.emailErr }}"><p id="hero-email-msg" role="alert" style="margin:0;font:500 13px/1.4 Inter,sans-serif;color:{{ hf.emailMsgColor }}">{{ hf.emailMsg }}</p></sc-if>
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <label for="hero-phone" style="font:500 13px/1.3 Inter,sans-serif;color:#ede9e2">WhatsApp</label>
+              <div style="position:relative">
+                <input id="hero-phone" name="phone" type="tel" inputMode="tel" autocomplete="tel-national" placeholder="(11) 98765-4321" value="{{ hf.phone }}" onChange="{{ hf.onPhone }}" onFocus="{{ hf.focusPhone }}" onBlur="{{ hf.blurPhone }}" aria-invalid="{{ hf.phoneInvalid }}" aria-describedby="hero-phone-msg" style="width:100%;box-sizing:border-box;height:50px;padding:0 44px 0 14px;background:#241e18;border:1px solid {{ hf.phoneBorder }};box-shadow:{{ hf.phoneRing }};border-radius:8px;color:#fbfaf9;font:400 16px/1 Inter,sans-serif;letter-spacing:.04em;outline:none;transition:border-color .15s,box-shadow .15s">
+                <sc-if value="{{ hf.phoneOk }}"><svg style="position:absolute;right:14px;top:15px" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8fc792" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></sc-if>
+              </div>
+              <sc-if value="{{ hf.phoneErr }}"><p id="hero-phone-msg" role="alert" style="margin:0;font:500 13px/1.4 Inter,sans-serif;color:{{ hf.phoneMsgColor }}">{{ hf.phoneMsg }}</p></sc-if>
+            </div>
+
+            <div style="margin-top:4px"><dc-import name="Salvy Button" kind="submit" variant="paper" label="Enviar dados" loading="{{ hf.loading }}" track="cta_hero_submit" hint-size="100%,56px"></dc-import></div>
+            <p style="margin:0;font:400 13px/1.5 Inter,sans-serif;color:#c3b5a0;display:flex;gap:8px;align-items:flex-start"><svg style="flex:none;margin-top:2px" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg><span>Sem compromisso. Usamos seus dados só para este contato, conforme a <a href="https://salvy.com.br/politica-de-privacidade" target="_blank" rel="noopener" style="color:#fbfaf9">política de privacidade</a>.</span></p>
+          </form>
+        </sc-if>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROOF -->
+  <div style="padding:clamp(80px,9vw,128px) 0 clamp(72px,8vw,112px)">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center">
+      <h2 data-reveal="" data-delay="80" style="margin:0;font:500 clamp(32px,4.2vw,60px)/1.08 Poppins,sans-serif;letter-spacing:-.035em;color:#7e7261;text-wrap:balance"><span style="color:#181410">Mais de 20.000 empresas</span><br>já mandaram um Salvy.</h2>
+    </div>
+    <div data-reveal="" data-delay="150" onMouseEnter="{{ marqueePause }}" onMouseLeave="{{ marqueePlay }}" style="margin-top:clamp(36px,4vw,56px);overflow:hidden;border-top:1px solid #ddd5c8;border-bottom:1px solid #ddd5c8;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)">
+      <ul ref="{{ marqueeRef }}" aria-label="Empresas clientes" style="list-style:none;margin:0;padding:0;display:flex;width:max-content;will-change:transform">
+        <sc-for list="{{ logosLoop }}" as="lg" hint-placeholder-count="10">
+          <li aria-hidden="{{ lg.dup }}" style="flex:none;height:104px;box-sizing:border-box;display:grid;place-items:center;padding:0 clamp(28px,3.2vw,52px)">
+            <img src="{{ lg.src }}" alt="{{ lg.alt }}" loading="lazy" style="max-height:30px;max-width:120px;width:auto;filter:grayscale(1);mix-blend-mode:multiply;opacity:.8;transition:opacity .2s,filter .2s" style-hover="opacity:1;filter:grayscale(0)">
+          </li>
+        </sc-for>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMA → MUDANÇA -->
+<section id="como-funciona" aria-labelledby="pp-title" style="background:#ede9e2;padding:clamp(88px,11vw,160px) 0;scroll-margin-top:72px">
+  <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px)">
+    <div style="display:flex;flex-wrap:wrap;gap:24px 64px;justify-content:space-between;align-items:flex-end;margin-bottom:clamp(48px,6vw,80px)">
+      <h2 id="pp-title" data-reveal="" style="margin:0;font:500 clamp(40px,6vw,88px)/1 Poppins,sans-serif;letter-spacing:-.04em;color:#181410;flex:1 1 480px">Antes e depois<br>da Salvy.</h2>
+      <p data-reveal="" data-delay="120" style="margin:0;font:400 clamp(17px,1.4vw,19px)/1.55 Inter,sans-serif;color:#4f4a4a;flex:0 1 420px;text-wrap:pretty">As velhas operadoras resolvem no papel e na espera. A Salvy resolve no painel. O que muda quando a telefonia da empresa sai do 0800 e vai para um lugar onde você vê e decide tudo.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:0 24px;padding:0 4px">
+      <span style="font:500 11px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#7e7261">Com as velhas operadoras</span>
+      <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}"><span style="font:500 11px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#181410">Com a Salvy</span></sc-if>
+    </div>
+    <ol style="list-style:none;margin:clamp(12px,2vw,20px) 0 0;padding:0;display:flex;flex-direction:column;gap:clamp(12px,2vw,20px)">
+        <li style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:16px 24px;padding:12px 0">
+          <div data-reveal="" data-cmp="" style="border:1px dashed #c3b5a0;border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:18px;min-width:0">
+            <div aria-hidden="true" style="min-height:168px;border-radius:10px;background:#e4ded4;padding:16px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;gap:10px;overflow:hidden;position:relative"><div style="position:absolute;left:28px;right:52px;top:22px;bottom:-10px;background:#d6cfc3;border-radius:6px"></div><div style="position:absolute;left:22px;right:46px;top:16px;bottom:-10px;background:#ddd5c8;border-radius:6px"></div><div style="position:absolute;left:16px;right:40px;top:10px;bottom:-10px;background:#f4f2ee;border-radius:6px;padding:14px;display:flex;flex-direction:column;gap:8px;box-sizing:border-box"><div style="display:flex;justify-content:space-between"><span style="font:500 11px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#7e7261">Fatura</span><span style="font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:.04em;color:#7e7261">pág. 1 de 4.555</span></div><span data-a="in" data-i="0" style="display:block;height:6px;width:92%;border-radius:3px;background:#ddd5c8;margin-top:18px;"></span><span data-a="in" data-i="1" style="display:block;height:6px;width:70%;border-radius:3px;background:#ddd5c8;"></span><span data-a="in" data-i="2" style="display:block;height:6px;width:84%;border-radius:3px;background:#ddd5c8;"></span><span data-a="in" data-i="3" style="display:block;height:6px;width:56%;border-radius:3px;background:#ddd5c8;"></span><span data-a="in" data-i="4" style="display:block;height:6px;width:76%;border-radius:3px;background:#ddd5c8;"></span></div></div>
+            <p style="margin:0;font:400 clamp(18px,1.6vw,22px)/1.3 Poppins,sans-serif;letter-spacing:-.01em;color:#7e7261;text-wrap:balance"><span data-strike="" style="background-image:linear-gradient(#7e7261,#7e7261);background-repeat:no-repeat;background-position:0 58%;background-size:100% 2px;-webkit-box-decoration-break:clone;box-decoration-break:clone">4.555 páginas de fatura para entender o que a empresa paga</span></p>
+          </div>
+          <div data-reveal="" data-delay="220" data-cmp="" style="background:#fff;border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:18px;min-width:0;box-shadow:-8px -8px 24px rgba(255,255,255,.5),8px 8px 24px rgba(35,35,35,.06)">
+            <div aria-hidden="true" style="min-height:168px;border-radius:12px;background:#f7f5f2;padding:14px 16px;box-sizing:border-box;display:flex;flex-direction:column;gap:12px">
+              <div style="display:flex;justify-content:space-between;align-items:center"><span style="font:500 11px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#807a7a">Consumo por área</span><img src="assets/logo-salvy.svg" alt="" style="height:12px;width:auto;opacity:.7"></div>
+              <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:18px"><div data-a="in" data-i="0" style="display:grid;grid-template-columns:132px 1fr;gap:12px;align-items:center"><span style="font:500 12px/1 Inter,sans-serif;color:#4f4a4a">Sales B2B</span><span style="height:8px;border-radius:4px;background:#ede9e2;display:block;overflow:hidden"><span data-a="bar" data-i="0" style="display:block;height:100%;width:78%;background:#2f5d8d;border-radius:4px;transform-origin:left center"></span></span></div><div data-a="in" data-i="1" style="display:grid;grid-template-columns:132px 1fr;gap:12px;align-items:center"><span style="font:500 12px/1 Inter,sans-serif;color:#4f4a4a">Marketing</span><span style="height:8px;border-radius:4px;background:#ede9e2;display:block;overflow:hidden"><span data-a="bar" data-i="1" style="display:block;height:100%;width:54%;background:#2f5d8d;border-radius:4px;transform-origin:left center"></span></span></div><div data-a="in" data-i="2" style="display:grid;grid-template-columns:132px 1fr;gap:12px;align-items:center"><span style="font:500 12px/1 Inter,sans-serif;color:#4f4a4a">Customer Success</span><span style="height:8px;border-radius:4px;background:#ede9e2;display:block;overflow:hidden"><span data-a="bar" data-i="2" style="display:block;height:100%;width:36%;background:#2f5d8d;border-radius:4px;transform-origin:left center"></span></span></div></div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:6px"><p style="margin:0;font:500 clamp(18px,1.6vw,22px)/1.3 Poppins,sans-serif;letter-spacing:-.01em;color:#181410;text-wrap:balance">Consumo por linha e por área, em tempo real.</p></div>
+          </div>
+        </li>
+        <li style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:16px 24px;padding:12px 0">
+          <div style="border:1px dashed #c3b5a0;border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:18px;min-width:0">
+            <div aria-hidden="true" style="min-height:168px;border-radius:10px;background:#e4ded4;padding:16px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;gap:10px;overflow:hidden;position:relative"><div style="display:flex;flex-direction:column;align-items:center;gap:8px"><span style="font:500 11px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#7e7261">Em espera no 0800</span><span style="font:500 40px/1 'JetBrains Mono',monospace;letter-spacing:.04em;color:#7e7261;font-variant-numeric:tabular-nums" data-hold-timer="">47:12</span><span style="display:flex;gap:6px"><span style="width:6px;height:6px;border-radius:50%;background:#c3b5a0;display:block"></span><span style="width:6px;height:6px;border-radius:50%;background:#c3b5a0;display:block"></span><span style="width:6px;height:6px;border-radius:50%;background:#c3b5a0;display:block"></span></span></div></div>
+            <p style="margin:0;font:400 clamp(18px,1.6vw,22px)/1.3 Poppins,sans-serif;letter-spacing:-.01em;color:#7e7261;text-wrap:balance"><span data-strike="" style="background-image:linear-gradient(#7e7261,#7e7261);background-repeat:no-repeat;background-position:0 58%;background-size:100% 2px;-webkit-box-decoration-break:clone;box-decoration-break:clone">Ligar no 0800 e torcer para cair em outro atendente</span></p>
+          </div>
+          <div data-reveal="" data-delay="220" data-cmp="" style="background:#fff;border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:18px;min-width:0;box-shadow:-8px -8px 24px rgba(255,255,255,.5),8px 8px 24px rgba(35,35,35,.06)">
+            <div aria-hidden="true" style="min-height:168px;border-radius:12px;background:#f7f5f2;padding:14px 16px;box-sizing:border-box;display:flex;flex-direction:column;gap:12px">
+              <div style="display:flex;justify-content:space-between;align-items:center"><span style="font:500 11px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#807a7a">Linha</span><img src="assets/logo-salvy.svg" alt="" style="height:12px;width:auto;opacity:.7"></div>
+              <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:9px"><div data-a="in" data-i="0"><div style="background:#fff;border-radius:8px;padding:7px 12px;display:flex;align-items:center;justify-content:space-between;gap:10px"><span style="display:flex;flex-direction:column;gap:4px"><span style="font:500 14px/1 Inter,sans-serif;color:#181410">Bruno Lima</span><span style="font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:.04em;color:#4f4a4a">(31) 97845-3612</span></span><span style="display:grid;justify-items:end"><span data-a="from" style="grid-area:1/1"><span  style="flex:none;font:500 12px/1 Inter,sans-serif;padding:5px 9px;border-radius:999px;background:#e0ebd6;color:#325332;white-space:nowrap">ativa</span></span><span data-a="to" style="grid-area:1/1"><span  style="flex:none;font:500 12px/1 Inter,sans-serif;padding:5px 9px;border-radius:999px;background:#f8d6d8;color:#8e141c;white-space:nowrap">bloqueada</span></span></span></div></div><div data-a="in" data-i="1" style="display:flex;gap:6px"><span style="font:500 13px/1 Inter,sans-serif;padding:9px 12px;border-radius:6px;background:#fff;color:#4f4a4a">Alterar plano</span><span data-a="press" style="font:500 13px/1 Inter,sans-serif;padding:9px 12px;border-radius:6px;background:#232323;color:#fbfaf9">Bloquear linha</span></div></div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:6px"><p style="margin:0;font:500 clamp(18px,1.6vw,22px)/1.3 Poppins,sans-serif;letter-spacing:-.01em;color:#181410;text-wrap:balance">Ativar, bloquear e trocar plano direto no painel, em minutos.</p></div>
+          </div>
+        </li>
+        <li style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:16px 24px;padding:12px 0">
+          <div style="border:1px dashed #c3b5a0;border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:18px;min-width:0">
+            <div aria-hidden="true" style="min-height:168px;border-radius:10px;background:#e4ded4;padding:16px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;gap:10px;overflow:hidden;position:relative"><div style="display:flex;justify-content:space-between;align-items:center"><span style="font:500 11px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#7e7261">Entrega do chip</span><span style="font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:.04em;color:#7e7261">previsão: 30 dias</span></div><span style="position:relative;display:block;margin-top:18px"><span style="height:8px;border-radius:4px;background:#d6cfc3;display:block;overflow:hidden"><span style="display:block;height:100%;width:8%;background:#a8a3a3"></span></span><svg width="24" height="24" viewBox="0 0 24 24" fill="#e4ded4" stroke="#7e7261" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="position:absolute;left:8%;top:-22px;transform:translateX(-30%)"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"></path><path d="M15 18H9"></path><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"></path><circle cx="17" cy="18" r="2"></circle><circle cx="7" cy="18" r="2"></circle></svg></span><div style="display:flex;justify-content:space-between"><span style="font:500 11px/1 Inter,sans-serif;color:#7e7261">Pedido</span><span style="font:500 11px/1 Inter,sans-serif;color:#a8a3a3">Separação</span><span style="font:500 11px/1 Inter,sans-serif;color:#a8a3a3">Envio</span><span style="font:500 11px/1 Inter,sans-serif;color:#a8a3a3">Entrega</span></div></div>
+            <p style="margin:0;font:400 clamp(18px,1.6vw,22px)/1.3 Poppins,sans-serif;letter-spacing:-.01em;color:#7e7261;text-wrap:balance"><span data-strike="" style="background-image:linear-gradient(#7e7261,#7e7261);background-repeat:no-repeat;background-position:0 58%;background-size:100% 2px;-webkit-box-decoration-break:clone;box-decoration-break:clone">Esperar um mês pelo chip</span></p>
+          </div>
+          <div data-reveal="" data-delay="220" data-cmp="" style="background:#fff;border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:18px;min-width:0;box-shadow:-8px -8px 24px rgba(255,255,255,.5),8px 8px 24px rgba(35,35,35,.06)">
+            <div aria-hidden="true" style="min-height:168px;border-radius:12px;background:#f7f5f2;padding:14px 16px;box-sizing:border-box;display:flex;flex-direction:column;gap:12px">
+              <div style="display:flex;justify-content:space-between;align-items:center"><span style="font:500 11px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#807a7a">eSIM</span><img src="assets/logo-salvy.svg" alt="" style="height:12px;width:auto;opacity:.7"></div>
+              <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:9px"><div data-a="in" data-i="0" style="display:flex;align-items:center;gap:14px"><span style="position:relative;width:60px;height:60px;border-radius:8px;background:#fff;display:grid;place-items:center;flex:none;overflow:hidden"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#181410" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 20h4v-3"></path></svg><span data-a="scan" style="position:absolute;left:4px;right:4px;top:0;height:2px;border-radius:1px;background:#4b9b4e;opacity:0;box-shadow:0 0 8px #4b9b4e"></span></span><span style="display:flex;flex-direction:column;gap:8px;align-items:flex-start"><span style="display:grid;justify-items:start"><span data-a="from" style="grid-area:1/1"><span  style="flex:none;font:500 12px/1 Inter,sans-serif;padding:5px 9px;border-radius:999px;background:#d9e4f2;color:#203f60;white-space:nowrap">lendo QR Code</span></span><span data-a="to" style="grid-area:1/1"><span  style="flex:none;font:500 12px/1 Inter,sans-serif;padding:5px 9px;border-radius:999px;background:#e0ebd6;color:#325332;white-space:nowrap">ativa</span></span></span><span style="font:500 14px/1.2 Inter,sans-serif;color:#181410">Linha pronta para usar</span><span style="font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:.04em;color:#4f4a4a">+55 (11) 97238-4561</span></span></div></div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:6px"><p style="margin:0;font:500 clamp(18px,1.6vw,22px)/1.3 Poppins,sans-serif;letter-spacing:-.01em;color:#181410;text-wrap:balance">Chip entregue ou eSIM ativado por QR Code.</p></div>
+          </div>
+        </li>
+        <li style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:16px 24px;padding:12px 0">
+          <div style="border:1px dashed #c3b5a0;border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:18px;min-width:0">
+            <div aria-hidden="true" style="min-height:168px;border-radius:10px;background:#e4ded4;padding:16px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;gap:16px;overflow:hidden;position:relative"><span style="font:500 11px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#7e7261">Linhas pagas <span style="margin-left:4px;padding:4px 7px;border-radius:4px;background:#181410;color:#fbfaf9;letter-spacing:.12em">sem consumo</span></span><div style="display:flex;justify-content:space-between;align-items:center;gap:10px"><span style="font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:.04em;color:#7e7261">(11) 9••••-1203</span><span style="display:flex;align-items:center;gap:8px"><span style="width:44px;height:6px;border-radius:3px;background:#d6cfc3;display:block"></span><span style="font:500 12px/1 Inter,sans-serif;color:#7e7261">0 GB usados</span></span></div><div style="display:flex;justify-content:space-between;align-items:center;gap:10px"><span style="font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:.04em;color:#7e7261">(21) 9••••-8842</span><span style="display:flex;align-items:center;gap:8px"><span style="width:44px;height:6px;border-radius:3px;background:#d6cfc3;display:block"></span><span style="font:500 12px/1 Inter,sans-serif;color:#7e7261">0 GB usados</span></span></div><div style="display:flex;justify-content:space-between;align-items:center;gap:10px"><span style="font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:.04em;color:#7e7261">(41) 9••••-3390</span><span style="display:flex;align-items:center;gap:8px"><span style="width:44px;height:6px;border-radius:3px;background:#d6cfc3;display:block"></span><span style="font:500 12px/1 Inter,sans-serif;color:#7e7261">0 GB usados</span></span></div></div>
+            <p style="margin:0;font:400 clamp(18px,1.6vw,22px)/1.3 Poppins,sans-serif;letter-spacing:-.01em;color:#7e7261;text-wrap:balance"><span data-strike="" style="background-image:linear-gradient(#7e7261,#7e7261);background-repeat:no-repeat;background-position:0 58%;background-size:100% 2px;-webkit-box-decoration-break:clone;box-decoration-break:clone">Pagar por linha que ninguém usa</span></p>
+          </div>
+          <div data-reveal="" data-delay="220" data-cmp="" style="background:#fff;border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:18px;min-width:0;box-shadow:-8px -8px 24px rgba(255,255,255,.5),8px 8px 24px rgba(35,35,35,.06)">
+            <div aria-hidden="true" style="min-height:168px;border-radius:12px;background:#f7f5f2;padding:14px 16px;box-sizing:border-box;display:flex;flex-direction:column;gap:12px">
+              <div style="display:flex;justify-content:space-between;align-items:center"><span style="font:500 11px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#807a7a">Linhas sem uso</span><img src="assets/logo-salvy.svg" alt="" style="height:12px;width:auto;opacity:.7"></div>
+              <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:9px"><div data-a="in" data-i="0"><div style="background:#fff;border-radius:8px;padding:7px 12px;display:flex;align-items:center;justify-content:space-between;gap:10px"><span style="display:flex;align-items:center;gap:10px"><span data-a="check" data-i="0" style="width:16px;height:16px;border-radius:4px;flex:none;background:#232323;display:grid;place-items:center"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg></span><span style="font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:.04em;color:#232323">(11) 9••••-1203</span></span><span  style="flex:none;font:500 12px/1 Inter,sans-serif;padding:5px 9px;border-radius:999px;background:#f6f1cb;color:#6d4d13;white-space:nowrap">sem uso há 30 dias</span></div></div><div data-a="in" data-i="1"><div style="background:#fff;border-radius:8px;padding:7px 12px;display:flex;align-items:center;justify-content:space-between;gap:10px"><span style="display:flex;align-items:center;gap:10px"><span data-a="check" data-i="1" style="width:16px;height:16px;border-radius:4px;flex:none;background:#232323;display:grid;place-items:center"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg></span><span style="font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:.04em;color:#232323">(21) 9••••-8842</span></span><span  style="flex:none;font:500 12px/1 Inter,sans-serif;padding:5px 9px;border-radius:999px;background:#f6f1cb;color:#6d4d13;white-space:nowrap">sem uso há 30 dias</span></div></div><div data-a="in" data-i="2"><div style="background:#fff;border-radius:8px;padding:7px 12px;display:flex;align-items:center;justify-content:space-between;gap:10px"><span style="display:flex;align-items:center;gap:10px"><span style="width:16px;height:16px;border-radius:4px;flex:none;box-sizing:border-box;border:1.5px solid #cbcbcb"></span><span style="font:500 12px/1 'JetBrains Mono',monospace;letter-spacing:.04em;color:#232323">(41) 9••••-3390</span></span><span  style="flex:none;font:500 12px/1 Inter,sans-serif;padding:5px 9px;border-radius:999px;background:#e0ebd6;color:#325332;white-space:nowrap">em uso</span></div></div></div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:6px"><p style="margin:0;font:500 clamp(18px,1.6vw,22px)/1.3 Poppins,sans-serif;letter-spacing:-.01em;color:#181410;text-wrap:balance">Linhas ociosas à vista, canceladas quando você decidir.</p></div>
+          </div>
+        </li>
+        <li style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:16px 24px;padding:12px 0">
+          <div data-reveal="" data-cmp="" style="border:1px dashed #c3b5a0;border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:18px;min-width:0">
+            <div aria-hidden="true" style="min-height:168px;border-radius:10px;background:#e4ded4;padding:16px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;gap:10px;overflow:hidden;position:relative"><div style="background:#f4f2ee;border-radius:6px;padding:14px;display:flex;flex-direction:column;gap:8px;position:relative"><span style="font:500 11px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#7e7261">Contrato</span><span style="display:block;height:6px;width:88%;border-radius:3px;background:#ddd5c8"></span><span style="display:block;height:6px;width:64%;border-radius:3px;background:#ddd5c8"></span><span style="display:block;height:6px;width:78%;border-radius:3px;background:#ddd5c8"></span><span data-a="stamp" style="position:absolute;right:14px;bottom:12px;transform:rotate(-8deg);border:1.5px solid #7e7261;color:#7e7261;border-radius:6px;padding:5px 8px;font:600 11px/1 Inter,sans-serif;letter-spacing:.1em;text-transform:uppercase">multa para sair</span></div></div>
+            <p style="margin:0;font:400 clamp(18px,1.6vw,22px)/1.3 Poppins,sans-serif;letter-spacing:-.01em;color:#7e7261;text-wrap:balance"><span data-strike="" style="background-image:linear-gradient(#7e7261,#7e7261);background-repeat:no-repeat;background-position:0 58%;background-size:100% 2px;-webkit-box-decoration-break:clone;box-decoration-break:clone">Contrato com fidelidade e multa para sair</span></p>
+          </div>
+          <div data-reveal="" data-delay="220" data-cmp="" style="background:#fff;border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:18px;min-width:0;box-shadow:-8px -8px 24px rgba(255,255,255,.5),8px 8px 24px rgba(35,35,35,.06)">
+            <div aria-hidden="true" style="min-height:168px;border-radius:12px;background:#f7f5f2;padding:14px 16px;box-sizing:border-box;display:flex;flex-direction:column;gap:12px">
+              <div style="display:flex;justify-content:space-between;align-items:center"><span style="font:500 11px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#807a7a">Contrato</span><img src="assets/logo-salvy.svg" alt="" style="height:12px;width:auto;opacity:.7"></div>
+              <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:9px"><div data-a="in" data-i="0"><div style="background:#fff;border-radius:8px;padding:7px 12px;display:flex;align-items:center;justify-content:space-between;gap:10px"><span style="display:flex;flex-direction:column;gap:4px"><span style="font:500 14px/1.2 Inter,sans-serif;color:#181410">Sem fidelidade</span><span style="font:400 13px/1.3 Inter,sans-serif;color:#4f4a4a">Mude ou cancele quando precisar</span></span><span data-a="toggle-bg" style="width:40px;height:24px;border-radius:999px;background:#4b9b4e;position:relative;flex:none;display:block"><span data-a="toggle-knob" style="position:absolute;right:3px;top:3px;width:18px;height:18px;border-radius:50%;background:#fff;display:block"></span></span></div></div><div data-a="in" data-i="1" style="display:flex;gap:8px"><span  style="flex:none;font:500 12px/1 Inter,sans-serif;padding:5px 9px;border-radius:999px;background:#e0ebd6;color:#325332;white-space:nowrap">sem multa</span><span  style="flex:none;font:500 12px/1 Inter,sans-serif;padding:5px 9px;border-radius:999px;background:#fff;color:#534a3d;white-space:nowrap">sem prazo mínimo</span></div></div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:6px"><p style="margin:0;font:500 clamp(18px,1.6vw,22px)/1.3 Poppins,sans-serif;letter-spacing:-.01em;color:#181410;text-wrap:balance">Sem fidelidade. Você fica porque funciona.</p></div>
+          </div>
+        </li>
+      </ol>
+  </div>
+</section>
+
+<!-- PRODUTOS -->
+<section id="produtos" aria-labelledby="prod-title" style="background:#f7f5f2;padding:clamp(88px,11vw,160px) 0;scroll-margin-top:72px">
+  <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px)">
+    <div style="display:flex;flex-wrap:wrap;gap:24px 64px;justify-content:space-between;align-items:flex-end;margin-bottom:clamp(40px,5vw,64px)">
+      <h2 id="prod-title" data-reveal="" style="margin:0;font:500 clamp(34px,4.4vw,64px)/1.04 Poppins,sans-serif;letter-spacing:-.035em;color:#181410;flex:1 1 560px;max-width:16ch;text-wrap:balance">A linha, o painel e a operação que roda sozinha.</h2>
+      <p data-reveal="" data-delay="120" style="margin:0;font:400 clamp(17px,1.4vw,19px)/1.55 Inter,sans-serif;color:#4f4a4a;flex:0 1 380px">Tudo numa operadora só. Comece pela conectividade. Quando a operação crescer, a gestão e a automação já estão lá.</p>
+    </div>
+
+    <div role="tablist" aria-label="Categorias de produto" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(8px,2vw,24px);margin-bottom:clamp(24px,3vw,40px)">
+      <sc-for list="{{ cats }}" as="c" hint-placeholder-count="3">
+        <button role="tab" aria-selected="{{ c.active }}" onClick="{{ c.onClick }}" style="all:unset;cursor:pointer;display:flex;flex-direction:column;gap:10px;padding:0 0 18px;border-bottom:2px solid {{ c.line }};transition:border-color .3s" style-hover="border-bottom-color:#7e7261">
+          <span style="font:500 11px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:{{ c.kfg }}">{{ c.k }}</span>
+          <span style="font:500 clamp(18px,2.4vw,32px)/1.1 Poppins,sans-serif;letter-spacing:-.025em;color:{{ c.fg }};transition:color .3s">{{ c.t }}</span>
+        </button>
+      </sc-for>
+    </div>
+
+    <div style="display:flex;flex-wrap:wrap;gap:clamp(20px,3vw,40px);align-items:stretch">
+      <div role="tabpanel" style="flex:1 1 300px;max-width:420px;display:flex;flex-direction:column;gap:6px">
+        <sc-for list="{{ prodList }}" as="p" hint-placeholder-count="4">
+          <button onClick="{{ p.onClick }}" aria-pressed="{{ p.active }}" style="all:unset;cursor:pointer;display:flex;flex-direction:column;gap:10px;padding:18px 20px;border-radius:12px;background:{{ p.bg }};box-shadow:{{ p.shadow }};transition:background .25s,box-shadow .25s" style-hover="background:#fbfaf9">
+            <span style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+              <span style="font:500 19px/1.25 Poppins,sans-serif;letter-spacing:-.01em;color:{{ p.fg }}">{{ p.name }}</span>
+              <sc-if value="{{ p.isNew }}"><span style="font:500 12px/1 Inter,sans-serif;color:#8b1865;background:#f7daea;border-radius:999px;padding:5px 9px">novo</span></sc-if>
+            </span>
+            <sc-if value="{{ p.active }}">
+              <span style="display:flex;flex-direction:column;gap:10px">
+                <span style="font:400 15px/1.55 Inter,sans-serif;color:#4f4a4a">{{ p.desc }}</span>
+                <span style="font:500 14px/1.5 Inter,sans-serif;color:#181410"><span style="color:#7e7261">Resolve:</span> {{ p.resolve }}</span>
+              </span>
+            </sc-if>
+          </button>
+        </sc-for>
+      </div>
+
+      <div aria-live="polite" style="flex:2 1 420px;min-width:0;min-height:clamp(380px,36vw,480px);background:#ede9e2;border-radius:24px;padding:clamp(20px,3vw,40px);display:flex;align-items:center;justify-content:center;box-sizing:border-box">
+        <div style="width:min(100%,560px);background:#fff;border-radius:16px;overflow:hidden;box-shadow:-8px -8px 24px rgba(255,255,255,.5),8px 8px 32px rgba(29,41,57,.14)">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 20px;border-bottom:1px solid #efefef">
+            <span style="display:flex;align-items:center;gap:12px;min-width:0"><img src="assets/logo-salvy.svg" alt="" style="height:15px;width:auto;display:block"><span style="width:1px;height:16px;background:#dad8d8;display:block"></span><span style="font:500 14px/1.2 Inter,sans-serif;color:#181410">{{ demo.head }}</span><sc-if value="{{ demo.logos }}"><span style="display:flex;align-items:center;gap:6px"><span style="font:400 13px/1 Inter,sans-serif;color:#807a7a">no</span><span title="ChatGPT" style="width:26px;height:26px;border-radius:7px;background:#fff;border:1px solid #efefef;display:grid;place-items:center"><img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT" style="width:16px;height:16px;display:block"></span><span title="Claude" style="width:26px;height:26px;border-radius:7px;background:#fff;border:1px solid #efefef;display:grid;place-items:center"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Claude_AI_symbol.svg" alt="Claude" style="width:16px;height:16px;display:block"></span><span title="Microsoft Teams" style="width:26px;height:26px;border-radius:7px;background:#fff;border:1px solid #efefef;display:grid;place-items:center"><img src="assets/logo-teams.svg" alt="Microsoft Teams" style="width:16px;height:16px;display:block"></span></span></sc-if></span>
+            <span style="flex:none;font:500 12px/1 Inter,sans-serif;padding:6px 10px;border-radius:999px;background:#f4f2ee;color:#534a3d">{{ demo.tag }}</span>
+          </div>
+          
+          <sc-if value="{{ d.chip }}" hint-placeholder-val="{{ true }}">
+            <div style="padding:22px 20px;min-height:268px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;gap:18px">
+              <div style="display:flex;align-items:center;gap:16px;opacity:{{ p1.o }};transform:{{ p1.t }};transition:opacity .55s cubic-bezier(.16,1,.3,1),transform .55s cubic-bezier(.16,1,.3,1)">
+                <span style="width:72px;height:48px;border-radius:8px;background:#181410;position:relative;flex:none;display:block;box-shadow:4px 6px 14px rgba(29,41,57,.25)"><span style="position:absolute;right:10px;top:12px;width:22px;height:18px;border-radius:4px;background:#ddd5c8;display:block"></span></span>
+                <span style="display:flex;flex-direction:column;gap:4px"><span style="font:500 17px/1.2 Poppins,sans-serif;color:#181410">10 chips · plano 5 GB</span><span style="font:400 13px/1.3 Inter,sans-serif;color:#4f4a4a">WhatsApp Business incluso</span></span>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0">
+                <sc-for list="{{ chipSteps }}" as="s" hint-placeholder-count="4">
+                  <div style="display:flex;flex-direction:column;gap:10px;position:relative">
+                    <span style="display:flex;align-items:center"><span style="width:14px;height:14px;border-radius:50%;background:{{ s.bar }};display:block;flex:none;transition:background .4s;box-shadow:0 0 0 4px #fff"></span><span style="flex:1;height:2px;background:{{ s.bar }};display:block;transition:background .4s"></span></span>
+                    <span style="font:500 12px/1.3 Inter,sans-serif;color:{{ s.fg }};transition:color .4s">{{ s.label }}</span>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+          </sc-if>
+          <sc-if value="{{ d.esim }}">
+            <div style="padding:22px 20px;min-height:268px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;gap:18px">
+              <div style="display:flex;align-items:center;gap:22px">
+                <span style="position:relative;width:112px;height:112px;border-radius:14px;background:#f7f5f2;display:grid;place-items:center;flex:none;overflow:hidden;color:#181410;opacity:{{ p1.o }};transform:{{ p1.t }};transition:opacity .55s cubic-bezier(.16,1,.3,1),transform .55s cubic-bezier(.16,1,.3,1)"><svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 20h4v-3"></path></svg><span style="position:absolute;left:10px;right:10px;height:2px;background:#4b9b4e;box-shadow:0 0 10px #4b9b4e;top:{{ scanTop }};transition:top 1.2s ease-in-out"></span></span>
+                <div style="display:flex;flex-direction:column;gap:10px;min-width:0">
+                  <span style="font:400 13px/1.3 Inter,sans-serif;color:#4f4a4a;opacity:{{ p2.o }};transform:{{ p2.t }};transition:opacity .55s cubic-bezier(.16,1,.3,1),transform .55s cubic-bezier(.16,1,.3,1)">QR Code lido no app Salvy</span>
+                  <span style="opacity:{{ p3.o }};transform:{{ p3.t }};transition:opacity .55s cubic-bezier(.16,1,.3,1),transform .55s cubic-bezier(.16,1,.3,1)"><span style="font:500 17px/1 'JetBrains Mono',monospace;letter-spacing:.06em;color:#181410">+55 (11) 97238-4561</span></span>
+                  <span style="display:flex;gap:8px;opacity:{{ p4.o }};transform:{{ p4.t }};transition:opacity .55s cubic-bezier(.16,1,.3,1),transform .55s cubic-bezier(.16,1,.3,1)"><span style="flex:none;font:500 12px/1 Inter,sans-serif;padding:5px 9px;border-radius:999px;background:#e0ebd6;color:#325332;white-space:nowrap">ativa</span><span style="flex:none;font:500 12px/1 Inter,sans-serif;padding:5px 9px;border-radius:999px;background:#f4f2ee;color:#534a3d;white-space:nowrap">sem chip físico</span></span>
+                </div>
+              </div>
+            </div>
+          </sc-if>
+          <sc-if value="{{ d.virtual }}">
+            <div style="padding:22px 20px;min-height:268px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;gap:18px">
+              <div style="text-align:center;display:flex;flex-direction:column;gap:10px;align-items:center;opacity:{{ p1.o }};transform:{{ p1.t }};transition:opacity .55s cubic-bezier(.16,1,.3,1),transform .55s cubic-bezier(.16,1,.3,1)">
+                <span style="font:500 26px/1 'JetBrains Mono',monospace;letter-spacing:.06em;color:#181410">(11) 9 ••••-4561</span>
+                <span style="display:flex;align-items:center;gap:8px;font:400 13px/1 Inter,sans-serif;color:#4f4a4a"><img src="assets/logo-whatsapp.svg" alt="" style="width:18px;height:18px">WhatsApp Business · API oficial da Meta</span>
+              </div>
+              <div style="align-self:center;width:min(100%,380px);background:#181410;color:#fbfaf9;border-radius:14px;padding:14px 16px;display:flex;gap:12px;align-items:center;box-shadow:6px 10px 24px rgba(29,41,57,.25);opacity:{{ p3.o }};transform:{{ p3.t }};transition:opacity .55s cubic-bezier(.16,1,.3,1),transform .55s cubic-bezier(.16,1,.3,1)">
+                <span style="width:34px;height:34px;border-radius:50%;background:#325332;display:grid;place-items:center;flex:none;color:#e0ebd6"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span>
+                <span style="display:flex;flex-direction:column;gap:2px;flex:1;min-width:0"><span style="font:500 14px/1.3 Inter,sans-serif">Código de verificação recebido</span><span style="font:400 12px/1.3 Inter,sans-serif;color:#c3b5a0">No painel e no seu sistema, via webhook</span></span>
+                <span style="font:400 12px/1 Inter,sans-serif;color:#c3b5a0">agora</span>
+              </div>
+            </div>
+          </sc-if>
+          <sc-if value="{{ d.global }}">
+            <div style="padding:22px 20px;min-height:268px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;gap:18px">
+              <div aria-hidden="true" style="position:relative;height:84px;margin:-6px 0 -4px">
+                <svg width="100%" height="84" viewBox="0 0 400 84" preserveAspectRatio="xMidYMid meet" style="position:absolute;left:0;top:0;display:block;overflow:visible">
+                  <path id="sv-route" d="M16 60 C 120 -8, 280 -8, 384 60" fill="none" stroke="#c3b5a0" stroke-width="1.5" stroke-dasharray="4 6"></path>
+                  <circle cx="16" cy="60" r="4" fill="#181410"></circle>
+                  <circle cx="384" cy="60" r="4" fill="#2f5d8d"></circle>
+                  <text x="16" y="82" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" letter-spacing=".6" fill="#7e7261">GRU</text><text x="384" y="82" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" font-weight="500" letter-spacing=".6" fill="#2f5d8d">LIS</text><circle cx="384" cy="60" r="10" fill="none" stroke="#2f5d8d" stroke-opacity=".35"><animate attributeName="r" values="4;14" dur="1.8s" repeatCount="indefinite"></animate><animate attributeName="stroke-opacity" values=".5;0" dur="1.8s" repeatCount="indefinite"></animate></circle>
+                  <g><animateMotion dur="4s" repeatCount="indefinite" rotate="auto" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines=".45 0 .25 1"><mpath href="#sv-route"></mpath></animateMotion>
+                    <path d="M-9 0 L9 0 M2 0 L-4 -7 M2 0 L-4 7 M-7 0 L-9 -3 M-7 0 L-9 3" stroke="#181410" stroke-width="2.4" stroke-linecap="round" fill="none"></path>
+                  </g>
+                </svg>
+              </div>
+              <div role="radiogroup" aria-label="Planos" style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;opacity:{{ p1.o }};transform:{{ p1.t }};transition:opacity .55s cubic-bezier(.16,1,.3,1),transform .55s cubic-bezier(.16,1,.3,1)">
+                <sc-for list="{{ gplans }}" as="g" hint-placeholder-count="3">
+                  <button role="radio" aria-checked="{{ g.active }}" onClick="{{ g.onClick }}" style="all:unset;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;padding:18px 0;border-radius:12px;border:1px solid {{ g.border }};background:{{ g.bg }};color:{{ g.fg }};transition:all .2s"><span style="font:500 26px/1 Poppins,sans-serif;letter-spacing:-.02em">{{ g.label }}</span><span style="font:400 12px/1 Inter,sans-serif;opacity:.75">plano fixo</span></button>
+                </sc-for>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;opacity:{{ p3.o }};transform:{{ p3.t }};transition:opacity .55s cubic-bezier(.16,1,.3,1),transform .55s cubic-bezier(.16,1,.3,1)">
+                <span style="display:flex;align-items:center;gap:10px;font:500 14px/1.3 Inter,sans-serif;color:#181410"><span style="color:#2f5d8d"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg></span>Mais de 100 países</span>
+                <span style="flex:none;font:500 12px/1 Inter,sans-serif;padding:5px 9px;border-radius:999px;background:#d9e4f2;color:#203f60;white-space:nowrap">dados extras na hora</span>
+              </div>
+            </div>
+          </sc-if>
+          <sc-if value="{{ d.painel }}">
+            <div style="padding:22px 20px;min-height:268px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;gap:18px">
+              <div style="display:flex;flex-wrap:wrap;align-items:center;gap:20px">
+                <div style="flex:1 1 140px;display:flex;flex-direction:column;gap:8px;opacity:{{ p1.o }};transform:{{ p1.t }};transition:opacity .55s cubic-bezier(.16,1,.3,1),transform .55s cubic-bezier(.16,1,.3,1)"><span style="font:500 11px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#807a7a">Total de linhas</span><span style="font:400 64px/1 Poppins,sans-serif;letter-spacing:-.04em;color:#181410">450</span></div>
+                <div style="flex:1 1 200px;display:flex;flex-direction:column;gap:8px">
+                  <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border-radius:8px;background:#f1f6ec;opacity:{{ p2.o }};transform:{{ p2.t }};transition:opacity .55s cubic-bezier(.16,1,.3,1),transform .55s cubic-bezier(.16,1,.3,1)"><span style="font:500 11px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#325332">Ativas</span><span style="font:400 24px/1 Poppins,sans-serif;color:#325332">27</span></div>
+                  <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border-radius:8px;background:#faf7e3;opacity:{{ p3.o }};transform:{{ p3.t }};transition:opacity .55s cubic-bezier(.16,1,.3,1),transform .55s cubic-bezier(.16,1,.3,1)"><span style="font:500 11px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#6d4d13">Aguardando ativação</span><span style="font:400 24px/1 Poppins,sans-serif;color:#6d4d13">10</span></div>
+                  <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border-radius:8px;background:#f8d6d8;opacity:{{ p4.o }};transform:{{ p4.t }};transition:opacity .55s cubic-bezier(.16,1,.3,1),transform .55s cubic-bezier(.16,1,.3,1)"><span style="font:500 11px/1 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#8e141c">Bloqueadas</span><span style="font:400 24px/1 Poppins,sans-serif;color:#8e141c">65</span></div>
+                </div>
+              </div>
+            </div>
+          </sc-if>
+          <sc-if value="{{ d.consumo }}">
+            <div style="padding:22px 20px;min-height:268px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;gap:18px">
+              <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+                <sc-for list="{{ rings }}" as="r" hint-placeholder-count="3">
+                  <div style="display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center">
+                    <svg width="76" height="76" viewBox="0 0 76 76" aria-hidden="true"><circle cx="38" cy="38" r="30" fill="none" stroke="#efefef" stroke-width="6"></circle><circle cx="38" cy="38" r="30" fill="none" stroke="{{ r.color }}" stroke-width="6" stroke-linecap="round" stroke-dasharray="188.5" stroke-dashoffset="{{ r.off }}" transform="rotate(-90 38 38)" style="transition:stroke-dashoffset 1.2s cubic-bezier(.16,1,.3,1)"></circle></svg>
+                    <span style="display:flex;flex-direction:column;gap:3px"><span style="font:600 15px/1.2 Inter,sans-serif;color:#181410">{{ r.val }}</span><span style="font:400 12px/1.3 Inter,sans-serif;color:#4f4a4a">{{ r.label }}</span></span>
+                  </div>
+                </sc-for>
+              </div>
+              <div style="display:flex;justify-content:center;gap:8px;flex-wrap:wrap;opacity:{{ p4.o }};transform:{{ p4.t }};transition:opacity .55s cubic-bezier(.16,1,.3,1),transform .55s cubic-bezier(.16,1,.3,1)"><span style="flex:none;font:500 12px/1 Inter,sans-serif;padding:5px 9px;border-radius:999px;background:#f4f2ee;color:#534a3d;white-space:nowrap">centro de custo · sales b2b</span><span style="flex:none;font:500 12px/1 Inter,sans-serif;padding:5px 9px;border-radius:999px;background:#d9e4f2;color:#203f60;white-space:nowrap">fatura prevista</span></div>
+            </div>
+          </sc-if>
+          <sc-if value="{{ d.ativos }}">
+            <div style="padding:22px 20px;min-height:268px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;gap:18px" >
+              <div style="display:flex;flex-direction:column;gap:22px">
+                <div style="display:flex;align-items:center;gap:14px;opacity:{{ p1.o }};transform:{{ p1.t }};transition:opacity .55s cubic-bezier(.16,1,.3,1),transform .55s cubic-bezier(.16,1,.3,1)"><span style="width:44px;height:44px;border-radius:10px;background:#f4f2ee;display:grid;place-items:center;flex:none;color:#181410"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"></rect><path d="M11 18h2"></path></svg></span><span style="display:flex;flex-direction:column;gap:6px;min-width:0"><span style="font:500 15px/1.2 Inter,sans-serif;color:#181410">Apple iPhone 16 Pro</span><span style="display:flex;align-items:center;gap:6px;font:400 13px/1 Inter,sans-serif;color:#4f4a4a">Vinculado à <span style="background:#efefef;border-radius:6px;padding:4px 7px;color:#232323">@ anderson carvalho</span></span></span></div>
+                <div style="display:flex;align-items:center;gap:14px;opacity:{{ p2.o }};transform:{{ p2.t }};transition:opacity .55s cubic-bezier(.16,1,.3,1),transform .55s cubic-bezier(.16,1,.3,1)"><span style="width:44px;height:44px;border-radius:10px;background:#f4f2ee;display:grid;place-items:center;flex:none;color:#181410"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="11" rx="1.5"></rect><path d="M2 19h20"></path></svg></span><span style="display:flex;flex-direction:column;gap:6px;min-width:0"><span style="font:500 15px/1.2 Inter,sans-serif;color:#181410">Apple MacBook Air</span><span style="display:flex;align-items:center;gap:6px;font:400 13px/1 Inter,sans-serif;color:#4f4a4a">Vinculado à <span style="background:#efefef;border-radius:6px;padding:4px 7px;color:#232323">@ carla araújo ramos</span></span></span></div>
+                <div style="display:flex;align-items:center;gap:14px;opacity:{{ p3.o }};transform:{{ p3.t }};transition:opacity .55s cubic-bezier(.16,1,.3,1),transform .55s cubic-bezier(.16,1,.3,1)"><span style="width:44px;height:44px;border-radius:10px;background:#f4f2ee;display:grid;place-items:center;flex:none;color:#181410"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"></rect><path d="M11 18h2"></path></svg></span><span style="display:flex;flex-direction:column;gap:6px;min-width:0"><span style="font:500 15px/1.2 Inter,sans-serif;color:#181410">Samsung Galaxy S3</span><span style="display:flex;align-items:center;gap:6px;font:400 13px/1 Inter,sans-serif;color:#4f4a4a">Vinculado à <span style="background:#efefef;border-radius:6px;padding:4px 7px;color:#232323">@ roberta amarante jr.</span></span></span></div>
+              </div>
+            </div>
+          </sc-if>
+          <sc-if value="{{ d.mdm }}">
+            <div style="padding:22px 20px;min-height:268px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;gap:18px">
+              <div style="display:flex;align-items:center;gap:24px">
+                <div style="width:104px;height:192px;border-radius:22px;border:6px solid #181410;background:{{ mdmScreen }};flex:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;box-sizing:border-box;transition:background .5s;opacity:{{ p1.o }};transform:{{ p1.t }};transition:opacity .55s cubic-bezier(.16,1,.3,1),transform .55s cubic-bezier(.16,1,.3,1)">
+                  <span style="color:{{ mdmIcon }};transition:color .5s"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg></span>
+                  <span style="font:500 11px/1.2 Inter,sans-serif;color:{{ mdmIcon }};text-align:center;transition:color .5s">{{ mdmLabel }}</span>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:8px;min-width:0">
+                  <sc-for list="{{ mdmRows }}" as="m" hint-placeholder-count="4">
+                    <span style="display:flex;align-items:center;gap:10px;font:500 14px/1.3 Inter,sans-serif;color:#181410;opacity:{{ m.vis.o }};transform:{{ m.vis.t }};transition:opacity .55s cubic-bezier(.16,1,.3,1),transform .55s cubic-bezier(.16,1,.3,1)"><span style="width:22px;height:22px;border-radius:50%;background:#d9e4f2;color:#203f60;display:grid;place-items:center;flex:none"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span>{{ m.t }}</span>
+                  </sc-for>
+                </div>
+              </div>
+            </div>
+          </sc-if>
+          <sc-if value="{{ d.mcp }}">
+            <div style="padding:22px 20px;min-height:268px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;gap:18px" >
+              <div style="align-self:flex-end;max-width:80%;background:#232323;color:#fbfaf9;border-radius:16px 16px 4px 16px;padding:11px 15px;font:400 14px/1.45 Inter,sans-serif;opacity:{{ p1.o }};transform:{{ p1.t }};transition:opacity .55s cubic-bezier(.16,1,.3,1),transform .55s cubic-bezier(.16,1,.3,1)">Me diga o que precisa da minha atenção.</div>
+              <div style="align-self:flex-start;max-width:88%;background:#f4f2ee;color:#181410;border-radius:16px 16px 16px 4px;padding:12px 15px;font:400 14px/1.5 Inter,sans-serif;display:flex;flex-direction:column;gap:10px;opacity:{{ p2.o }};transform:{{ p2.t }};transition:opacity .55s cubic-bezier(.16,1,.3,1),transform .55s cubic-bezier(.16,1,.3,1)">
+                <span>Seis linhas sem uso há mais de trinta dias. Duas passaram do pacote. Um colaborador desligado continua com linha ativa.</span>
+                <span style="display:flex;gap:6px;flex-wrap:wrap;opacity:{{ p3.o }};transform:{{ p3.t }};transition:opacity .55s cubic-bezier(.16,1,.3,1),transform .55s cubic-bezier(.16,1,.3,1)"><span style="font:500 12px/1 Inter,sans-serif;padding:7px 10px;border-radius:999px;background:#fff;border:1px solid #dad8d8">Bloquear linhas</span><span style="font:500 12px/1 Inter,sans-serif;padding:7px 10px;border-radius:999px;background:#fff;border:1px solid #dad8d8">Ajustar plano</span></span>
+              </div>
+              <div style="align-self:flex-start;display:flex;align-items:center;gap:8px;font:500 13px/1.4 Inter,sans-serif;color:#3e7440;opacity:{{ p4.o }};transform:{{ p4.t }};transition:opacity .55s cubic-bezier(.16,1,.3,1),transform .55s cubic-bezier(.16,1,.3,1)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Resolvo os três agora. O plano muda no próximo ciclo.</div>
+            </div>
+          </sc-if>
+          <sc-if value="{{ d.api }}">
+            <div style="padding:22px 20px;min-height:268px;box-sizing:border-box;background:#181410;display:flex;flex-direction:column;justify-content:center">
+              <sc-for list="{{ apiLog }}" as="l" hint-placeholder-count="4">
+                <div style="display:grid;grid-template-columns:44px 14px 1fr;gap:12px;align-items:start;opacity:{{ l.vis.o }};transform:{{ l.vis.t }};transition:opacity .55s cubic-bezier(.16,1,.3,1),transform .55s cubic-bezier(.16,1,.3,1)">
+                  <span style="font:400 12px/20px 'JetBrains Mono',monospace;color:#a8a3a3">{{ l.time }}</span>
+                  <span style="display:flex;flex-direction:column;align-items:center;align-self:stretch"><span style="width:8px;height:8px;border-radius:50%;background:#8fc792;margin-top:6px;display:block;flex:none"></span><span style="flex:1;width:1px;background:#342c24;display:block;min-height:22px"></span></span>
+                  <span style="display:flex;flex-direction:column;gap:6px;padding-bottom:14px"><span style="align-self:flex-start;font:500 11px/1 'JetBrains Mono',monospace;color:#ddd5c8;border:1px solid #534a3d;border-radius:4px;padding:3px 6px">{{ l.sys }}</span><span style="font:400 14px/1.45 Inter,sans-serif;color:#fbfaf9">{{ l.text }}</span></span>
+                </div>
+              </sc-for>
+            </div>
+          </sc-if>
+          <div style="display:flex;align-items:center;gap:8px;padding:14px 20px;background:#fbfaf9;border-top:1px solid #efefef;font:500 13px/1.4 Inter,sans-serif;color:#4f4a4a"><span style="width:6px;height:6px;border-radius:50%;background:#4b9b4e;display:block;flex:none;animation:sv-pulse 2s infinite"></span>{{ demo.foot }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLATAFORMA EM AÇÃO -->
+<section id="plataforma" aria-labelledby="plat-title" style="background:#181410;color:#fbfaf9;padding:clamp(88px,11vw,160px) 0;scroll-margin-top:72px">
+  <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px)">
+    <span data-reveal="" style="display:block;font:500 11px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#c3b5a0;margin-bottom:24px">A plataforma em ação</span>
+    <div style="display:flex;flex-wrap:wrap;gap:24px 64px;justify-content:space-between;align-items:flex-end;margin-bottom:clamp(40px,5vw,56px)">
+      <h2 id="plat-title" data-reveal="" style="margin:0;font:500 clamp(36px,5vw,76px)/1.02 Poppins,sans-serif;letter-spacing:-.04em;color:#fbfaf9;flex:1 1 520px;text-wrap:balance">Um pedido. Três jeitos de resolver.</h2>
+      <p data-reveal="" data-delay="120" style="margin:0;font:400 clamp(17px,1.4vw,19px)/1.55 Inter,sans-serif;color:#ddd5c8;flex:0 1 380px">Faça no painel, peça para a IA que o time já usa ou deixe seus sistemas cuidarem disso.</p>
+    </div>
+
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:clamp(28px,3vw,40px)">
+      <span style="font:500 14px/1 Inter,sans-serif;color:#c3b5a0;margin-right:6px">Escolha uma situação:</span>
+      <sc-for list="{{ scens }}" as="s" hint-placeholder-count="4">
+        <button onClick="{{ s.onClick }}" aria-pressed="{{ s.active }}" style="all:unset;cursor:pointer;height:40px;padding:0 16px;border-radius:999px;display:inline-flex;align-items:center;font:500 14px/1 Inter,sans-serif;background:{{ s.bg }};color:{{ s.fg }};border:1px solid {{ s.border }};transition:all .2s" style-hover="border-color:#c3b5a0">{{ s.label }}</button>
+      </sc-for>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:16px">
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div style="display:flex;flex-direction:column;gap:4px"><span style="font:500 22px/1.2 Poppins,sans-serif;letter-spacing:-.01em;color:#fbfaf9">No painel</span><span style="font:400 14px/1.4 Inter,sans-serif;color:#c3b5a0">Você clica.</span></div>
+        <div style="background:#fbfaf9;border-radius:16px;padding:24px;height:300px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;gap:16px">
+          <div style="background:#fff;border-radius:12px;padding:16px;border:1px solid #ede9e2;display:flex;justify-content:space-between;align-items:center;gap:12px">
+            <span style="display:flex;flex-direction:column;gap:5px;min-width:0"><span style="font:500 15px/1.2 Inter,sans-serif;color:#181410">{{ sp.who }}</span><span style="font-family:{{ sp.ff }};font-size:13px;line-height:1.3;letter-spacing:{{ sp.ls }};color:#4f4a4a">{{ sp.sub }}</span></span>
+            <span style="flex:none;font:500 12px/1 Inter,sans-serif;padding:6px 10px;border-radius:999px;background:{{ sp.bg }};color:{{ sp.fg }};transition:background .4s,color .4s">{{ sp.status }}</span>
+          </div>
+          <div style="position:relative">
+            <span style="display:flex;align-items:center;justify-content:center;height:46px;border-radius:8px;font:600 14px/1 Inter,sans-serif;background:#232323;color:#fbfaf9;box-shadow:{{ sp.btnShadow }};transition:box-shadow .2s">{{ sp.action }}</span>
+            <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" style="position:absolute;right:28%;top:24px;opacity:{{ sp.curO }};transform:{{ sp.curT }};transition:opacity .4s,transform .6s cubic-bezier(.16,1,.3,1);filter:drop-shadow(0 2px 3px rgba(0,0,0,.3))"><path d="M5 3l14 7-6 2-2 6z" fill="#fbfaf9" stroke="#181410" stroke-width="1.5" stroke-linejoin="round"></path></svg>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div style="display:flex;flex-direction:column;gap:4px"><span style="font:500 22px/1.2 Poppins,sans-serif;letter-spacing:-.01em;color:#fbfaf9">Numa conversa</span><span style="font:400 14px/1.4 Inter,sans-serif;color:#c3b5a0">Você pede no ChatGPT ou no Claude.</span></div>
+        <div style="background:#241e18;border:1px solid #342c24;border-radius:16px;padding:24px;height:300px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;gap:14px">
+          <div style="align-self:flex-end;max-width:88%;background:#ede9e2;color:#181410;border-radius:14px 14px 4px 14px;padding:12px 14px;font:400 14px/1.45 Inter,sans-serif;opacity:{{ v1.o }};transform:{{ v1.t }};transition:opacity .55s cubic-bezier(.16,1,.3,1),transform .55s cubic-bezier(.16,1,.3,1)">{{ sc.chat.ask }}</div>
+          <div style="position:relative;min-height:72px">
+            <div style="position:absolute;left:0;top:0;display:flex;gap:5px;padding:14px 16px;border-radius:14px 14px 14px 4px;background:#342c24;opacity:{{ typingO }};transition:opacity .3s">
+              <span style="width:6px;height:6px;border-radius:50%;background:#c3b5a0;display:block;animation:sv-pulse 1.2s infinite"></span><span style="width:6px;height:6px;border-radius:50%;background:#c3b5a0;display:block;animation:sv-pulse 1.2s .2s infinite"></span><span style="width:6px;height:6px;border-radius:50%;background:#c3b5a0;display:block;animation:sv-pulse 1.2s .4s infinite"></span>
+            </div>
+            <div style="max-width:92%;background:#342c24;color:#fbfaf9;border-radius:14px 14px 14px 4px;padding:12px 14px;font:400 14px/1.5 Inter,sans-serif;opacity:{{ v3.o }};transform:{{ v3.t }};transition:opacity .55s cubic-bezier(.16,1,.3,1),transform .55s cubic-bezier(.16,1,.3,1)">{{ sp.answer }}</div>
+          </div>
+          <span style="display:inline-flex;align-items:center;gap:6px;font:500 12px/1 Inter,sans-serif;color:#8fc792;opacity:{{ v4.o }};transition:opacity .4s"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8fc792" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>{{ sp.done }}</span>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div style="display:flex;flex-direction:column;gap:4px"><span style="font:500 22px/1.2 Poppins,sans-serif;letter-spacing:-.01em;color:#fbfaf9">Sem ninguém clicar</span><span style="font:400 14px/1.4 Inter,sans-serif;color:#c3b5a0">Seus sistemas avisam a Salvy.</span></div>
+        <div style="background:#241e18;border:1px solid #342c24;border-radius:16px;padding:24px;height:300px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center">
+          <div style="display:flex;flex-direction:column;gap:6px;padding:14px 16px;border-radius:12px;border:1px dashed #534a3d;opacity:{{ v1.o }};transform:{{ v1.t }};transition:opacity .55s cubic-bezier(.16,1,.3,1),transform .55s cubic-bezier(.16,1,.3,1)"><span style="font:500 12px/1 Inter,sans-serif;color:#c3b5a0">{{ sc.api.where }}</span><span style="font:500 15px/1.35 Inter,sans-serif;color:#fbfaf9">{{ sc.api.event }}</span></div>
+          <div aria-hidden="true" style="position:relative;height:52px;margin-left:23px;display:flex;align-items:center">
+            <span style="position:absolute;left:0;top:0;bottom:0;width:0;border-left:2px dotted #534a3d"></span>
+            <span style="position:absolute;left:0;top:0;width:2px;height:{{ apiLine }};background:#8fc792;transition:height .6s cubic-bezier(.16,1,.3,1)"></span>
+            <span style="position:absolute;left:-4px;top:0;width:10px;height:10px;border-radius:50%;background:#8fc792;box-shadow:0 0 0 4px rgba(143,199,146,.18),0 0 12px #8fc792;opacity:{{ apiDotO }};animation:sv-travel 1.6s cubic-bezier(.65,0,.35,1) infinite;transition:opacity .3s"></span>
+            <span style="margin-left:18px;font:500 11px/1 'JetBrains Mono',monospace;color:#c3b5a0;border:1px solid #534a3d;border-radius:999px;padding:5px 9px;opacity:{{ v2.o }};transition:opacity .4s">via Salvy API</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 16px;border-radius:12px;background:#fbfaf9;opacity:{{ v3.o }};transform:{{ v3.t }};transition:opacity .55s cubic-bezier(.16,1,.3,1),transform .55s cubic-bezier(.16,1,.3,1)"><span style="display:flex;flex-direction:column;gap:6px"><span style="font:500 12px/1 Inter,sans-serif;color:#3e7440">A Salvy faz sozinha</span><span style="font:500 15px/1.35 Inter,sans-serif;color:#181410">{{ sc.api.result }}</span></span><span style="flex:none;width:28px;height:28px;border-radius:50%;background:#e0ebd6;display:grid;place-items:center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#325332" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px 40px;margin-top:clamp(40px,5vw,64px);padding-top:28px;border-top:1px solid #342c24">
+      <p style="margin:0;font:400 15px/1.55 Inter,sans-serif;color:#ddd5c8;max-width:560px">Salvy MCP, Salvy API e Salvy MDM chegaram no Salvy Release '26 (Maestro). O especialista confirma o que já está disponível para a sua operação.</p>
+      <dc-import name="Salvy Button" label="Quero ver na minha operação" variant="paper" track="cta_plataforma" on-click="{{ openModal }}" hint-size="300px,54px"></dc-import>
+    </div>
+  </div>
+</section>
+
+<!-- DIFERENCIAIS -->
+<section aria-labelledby="dif-title" style="background:#f7f5f2;padding:clamp(88px,11vw,160px) 0">
+  <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-wrap:wrap;gap:48px clamp(40px,6vw,96px);align-items:flex-start">
+    <div style="flex:1 1 320px;max-width:440px;position:sticky;top:112px;display:flex;flex-direction:column;gap:24px">
+      <h2 id="dif-title" data-reveal="" style="margin:0;font:500 clamp(36px,4.4vw,64px)/1.02 Poppins,sans-serif;letter-spacing:-.04em;color:#181410">Por que empresas escolhem a Salvy</h2>
+      <p data-reveal="" data-delay="100" style="margin:0;font:400 clamp(17px,1.4vw,19px)/1.55 Inter,sans-serif;color:#4f4a4a">Os motivos que mais pesam quando o TI decide trocar de operadora.</p>
+      <div data-reveal="" data-delay="200"><dc-import name="Salvy Button" label="Comece agora" href="https://app.salvy.com.br/sign-up" track="cta_diferenciais" hint-size="250px,54px"></dc-import></div>
+    </div>
+    <ol style="flex:2 1 420px;list-style:none;margin:0;padding:0;border-top:1px solid #ddd5c8">
+      <sc-for list="{{ difs }}" as="f" hint-placeholder-count="7">
+        <li data-reveal="" style="display:grid;grid-template-columns:52px minmax(0,1fr);gap:clamp(16px,2.4vw,32px);align-items:center;padding:clamp(22px,2.6vw,32px) 0;border-bottom:1px solid #ddd5c8">
+          <span style="width:52px;height:52px;border-radius:50%;background:#ede9e2;display:grid;place-items:center"><img src="{{ f.icon }}" alt="" style="width:22px;height:22px;display:block"></span>
+          <div style="display:flex;flex-wrap:wrap;gap:8px 32px;align-items:baseline">
+            <h3 style="margin:0;font:500 clamp(22px,2.2vw,30px)/1.15 Poppins,sans-serif;letter-spacing:-.02em;color:#181410;flex:1 1 220px">{{ f.t }}</h3>
+            <p style="margin:0;font:400 16px/1.55 Inter,sans-serif;color:#4f4a4a;flex:1 1 260px">{{ f.d }}</p>
+          </div>
+        </li>
+      </sc-for>
+    </ol>
+  </div>
+</section>
+
+<!-- CASES -->
+<section id="clientes" aria-labelledby="cases-title" style="background:#ede9e2;padding:clamp(88px,11vw,160px) 0;scroll-margin-top:72px">
+  <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px)">
+    <span data-reveal="" style="display:block;font:500 11px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#534a3d;margin-bottom:24px">Clientes</span>
+    <h2 id="cases-title" data-reveal="" style="margin:0 0 clamp(40px,5vw,64px);font:500 clamp(36px,4.4vw,64px)/1.02 Poppins,sans-serif;letter-spacing:-.04em;color:#181410">O que muda depois da troca.</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,56px);align-items:stretch">
+      <div role="tablist" aria-label="Cases" style="flex:0 1 240px;max-width:{{ caseTabsMax }};display:flex;flex-direction:{{ caseDir }};gap:4px;overflow-x:auto">
+        <sc-for list="{{ caseTabs }}" as="c" hint-placeholder-count="5">
+          <button role="tab" aria-selected="{{ c.active }}" onClick="{{ c.onClick }}" style="all:unset;cursor:pointer;flex:none;display:flex;flex-direction:column;gap:4px;padding:16px 18px;border-radius:12px;background:{{ c.bg }};box-shadow:{{ c.shadow }};transition:background .25s,box-shadow .25s" style-hover="background:#fbfaf9">
+            <span style="font:500 20px/1.2 Poppins,sans-serif;letter-spacing:-.01em;color:{{ c.fg }}">{{ c.co }}</span>
+            <span style="font:400 13px/1 Inter,sans-serif;color:#7e7261">{{ c.sector }}</span>
+          </button>
+        </sc-for>
+      </div>
+      <article role="tabpanel" data-case-panel="" style="position:relative;flex:1 1 460px;min-width:0;background:#fbfaf9;border-radius:24px;padding:clamp(28px,4vw,56px);display:flex;flex-direction:column;gap:clamp(28px,3vw,40px);box-shadow:-8px -8px 24px rgba(255,255,255,.5),8px 8px 24px rgba(35,35,35,.05)">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:36px">
+          <sc-if value="{{ cs.logo }}"><img src="{{ cs.logo }}" alt="{{ cs.co }}" style="height:{{ cs.logoH }};width:auto;max-width:200px;object-fit:contain;display:block;margin:{{ cs.logoM }};filter:grayscale(1) contrast(100);mix-blend-mode:multiply"></sc-if>
+          <sc-if value="{{ cs.noLogo }}"><span style="font:600 22px/1 Poppins,sans-serif;letter-spacing:-.02em;color:#181410">{{ cs.co }}</span></sc-if>
+          <span style="font:500 12px/1 Inter,sans-serif;padding:6px 10px;border-radius:999px;background:#ede9e2;color:#534a3d">{{ cs.sector }}</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <p style="margin:0;font:400 {{ cs.size }}/.9 Poppins,sans-serif;letter-spacing:-.055em;color:#181410">{{ cs.big }}<span style="color:#c3b5a0">{{ cs.unit }}</span></p>
+          <p style="margin:0;font:500 clamp(18px,1.8vw,24px)/1.3 Poppins,sans-serif;letter-spacing:-.015em;color:#232323;max-width:28ch">{{ cs.label }}</p>
+          <p style="margin:0;font:400 15px/1.5 Inter,sans-serif;color:#4f4a4a">{{ cs.detail }}</p>
+        </div>
+        <blockquote style="margin:0;padding-top:clamp(24px,3vw,32px);border-top:1px solid #ddd5c8;display:flex;flex-direction:column;gap:16px">
+          <p style="margin:0;font:400 clamp(20px,2vw,28px)/1.35 Poppins,sans-serif;letter-spacing:-.015em;color:#181410;text-wrap:pretty">“{{ cs.quote }}”</p>
+          <footer style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px">
+            <span style="font:400 15px/1.4 Inter,sans-serif;color:#4f4a4a"><strong style="font-weight:600;color:#181410">{{ cs.who }}</strong>, {{ cs.role }}</span>
+            <sc-if value="{{ cs.href }}"><a href="{{ cs.href }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;font:600 15px/1 Inter,sans-serif;color:#181410">Ler o case<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"></path></svg></a></sc-if>
+          </footer>
+        </blockquote>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PLANOS -->
+<section id="planos" aria-labelledby="planos-title" style="background:#f7f5f2;padding:clamp(88px,11vw,160px) 0;scroll-margin-top:72px">
+  <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px)">
+    <div style="display:flex;flex-wrap:wrap;gap:24px 64px;justify-content:space-between;align-items:flex-end;margin-bottom:clamp(36px,4vw,56px)">
+      <div style="display:flex;flex-direction:column;gap:16px;max-width:720px">
+        <span data-reveal="" style="font:500 11px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#534a3d">Planos e preços</span>
+        <h2 id="planos-title" data-reveal="" data-delay="80" style="margin:0;font:500 clamp(36px,4.4vw,64px)/1.02 Poppins,sans-serif;letter-spacing:-.04em;color:#181410;text-wrap:balance">Planos sem burocracia e fidelidade</h2>
+        <p data-reveal="" data-delay="140" style="margin:0;font:400 clamp(17px,1.4vw,19px)/1.55 Inter,sans-serif;color:#4f4a4a">Escolha o plano ideal para a sua operação</p>
+      </div>
+      <div data-reveal="" data-delay="200" style="max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:14px"><div role="tablist" aria-label="Tipo de uso" style="display:inline-flex;flex-wrap:nowrap;gap:4px;padding:5px;border-radius:14px;background:#ede9e2;white-space:nowrap">
+        <sc-for list="{{ planTabs }}" as="t" hint-placeholder-count="3">
+          <button role="tab" aria-selected="{{ t.sel }}" aria-controls="planos-panel" onClick="{{ t.onClick }}" style="all:unset;cursor:pointer;display:flex;align-items:center;gap:9px;height:44px;padding:0 16px;border-radius:10px;font:500 14px/1 Inter,sans-serif;background:{{ t.bg }};color:{{ t.fg }};box-shadow:{{ t.sh }};transition:background .25s,color .25s,box-shadow .25s">
+            <img src="{{ t.icon }}" alt="" style="width:18px;height:18px;display:block;filter:{{ t.filter }}">{{ t.label }}
+          </button>
+        </sc-for>
+      </div></div>
+    </div>
+
+    <div id="planos-panel" role="tabpanel" ref="{{ planPanelRef }}">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 24px;margin-bottom:20px">
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <h3 style="margin:0;font:500 22px/1.2 Poppins,sans-serif;letter-spacing:-.02em;color:#181410">{{ planHead.title }}</h3>
+          <p style="margin:0;font:400 15px/1.5 Inter,sans-serif;color:#4f4a4a;max-width:620px">{{ planHead.sub }}</p>
+        </div>
+        <span style="display:inline-flex;align-items:center;gap:6px;font:500 13px/1 Inter,sans-serif;color:#534a3d"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none"><path d="M20 6 9 17l-5-5"></path></svg>Mensal por linha</span>
+      </div>
+      <ul style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:{{ planCols }};gap:16px">
+        <sc-for list="{{ plans }}" as="p" hint-placeholder-count="6">
+          <li data-plan="" style="background:#fff;border-radius:16px;padding:28px 24px;display:flex;flex-direction:column;gap:20px;box-shadow:-8px -8px 24px rgba(255,255,255,.5),8px 8px 24px rgba(35,35,35,.06);transition:box-shadow .3s cubic-bezier(.16,1,.3,1),transform .3s cubic-bezier(.16,1,.3,1)" style-hover="transform:translateY(-3px);box-shadow:-8px -8px 24px rgba(255,255,255,.5),8px 8px 32px rgba(29,41,57,.14)">
+            <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px 10px;min-height:26px">
+              <span style="font:500 22px/1.15 Poppins,sans-serif;letter-spacing:-.02em;color:#181410;white-space:nowrap">{{ p.name }}</span>
+              <sc-if value="{{ p.badge }}"><span style="flex:none;font:500 12px/1 Inter,sans-serif;padding:6px 10px;border-radius:999px;background:#e0ebd6;color:#325332">{{ p.badge }}</span></sc-if>
+            </div>
+            <div style="display:flex;align-items:baseline;gap:6px;padding-bottom:20px;border-bottom:1px solid #efefef">
+              <span style="font:500 15px/1 Inter,sans-serif;color:#4f4a4a">R$</span>
+              <span style="font:500 clamp(36px,3.4vw,44px)/1 Poppins,sans-serif;letter-spacing:-.04em;color:#181410">{{ p.price }}</span>
+              <span style="font:400 14px/1 Inter,sans-serif;color:#4f4a4a">/mês</span>
+            </div>
+            <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px">
+              <sc-for list="{{ p.feats }}" as="f" hint-placeholder-count="4">
+                <li style="display:flex;align-items:flex-start;gap:10px;font:400 14px/1.4 Inter,sans-serif;color:#232323"><span style="width:20px;height:20px;border-radius:50%;background:#f4f2ee;color:#181410;display:grid;place-items:center;flex:none;margin-top:-1px"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none"><path d="M20 6 9 17l-5-5"></path></svg></span>{{ f }}</li>
+              </sc-for>
+            </ul>
+          </li>
+        </sc-for>
+      </ul>
+      <div style="display:flex;justify-content:center;margin-top:clamp(32px,4vw,48px)">
+        <dc-import name="Salvy Button" label="Comece agora" href="https://app.salvy.com.br/sign-up" track="cta_planos" hint-size="200px,54px"></dc-import>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="duvidas" aria-labelledby="faq-title" style="background:#ede9e2;padding:clamp(88px,11vw,160px) 0;scroll-margin-top:72px">
+  <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:flex;flex-wrap:wrap;gap:40px clamp(40px,6vw,96px);align-items:flex-start">
+    <div style="flex:1 1 300px;max-width:400px;display:flex;flex-direction:column;gap:20px">
+      <h2 id="faq-title" data-reveal="" style="margin:0;font:500 clamp(36px,4.4vw,64px)/1.02 Poppins,sans-serif;letter-spacing:-.04em;color:#181410">Por que escolher a Salvy</h2>
+    </div>
+    <div style="flex:2 1 420px;border-top:1px solid #ddd5c8">
+      <sc-for list="{{ faqs }}" as="q" hint-placeholder-count="7">
+        <div style="border-bottom:1px solid #ddd5c8">
+          <h3 style="margin:0"><button id="{{ q.bid }}" aria-expanded="{{ q.open }}" aria-controls="{{ q.pid }}" onClick="{{ q.onClick }}" style="all:unset;cursor:pointer;width:100%;box-sizing:border-box;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:24px 0;font:500 clamp(18px,1.6vw,21px)/1.35 Poppins,sans-serif;letter-spacing:-.01em;color:#181410">
+            <span>{{ q.q }}</span>
+            <span aria-hidden="true" style="flex:none;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:{{ q.iconBg }};color:{{ q.iconFg }};transform:rotate({{ q.rot }});transition:transform .3s cubic-bezier(.16,1,.3,1),background .2s"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></span>
+          </button></h3>
+          <sc-if value="{{ q.open }}"><div id="{{ q.pid }}" role="region" aria-labelledby="{{ q.bid }}" style="padding:0 56px 26px 0;font:400 16px/1.6 Inter,sans-serif;color:#4f4a4a">{{ q.a }}</div></sc-if>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section ref="{{ finalRef }}" aria-labelledby="final-title" style="background:#181410;color:#fbfaf9;padding:clamp(88px,11vw,160px) 0 0;overflow:hidden">
+  <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,48px)">
+    <h2 id="final-title" data-reveal="" style="margin:0;font:500 clamp(64px,12.5vw,200px)/.88 Poppins,sans-serif;letter-spacing:-.06em;color:#fbfaf9">Manda um <span style="color:#c3b5a0">Salvy.</span></h2>
+    <div style="display:flex;flex-wrap:wrap;gap:48px clamp(40px,6vw,96px);margin-top:clamp(48px,6vw,88px);align-items:flex-start">
+      <div data-reveal="" style="flex:1 1 360px;display:flex;flex-direction:column;gap:24px">
+        <p style="margin:0;font:500 clamp(24px,2.4vw,34px)/1.2 Poppins,sans-serif;letter-spacing:-.02em">A troca é feita pela Salvy, sem parar a operação.</p>
+        <p style="margin:0;font:400 17px/1.55 Inter,sans-serif;color:#ddd5c8;max-width:30em">Leve seus números, mantenha as linhas funcionando durante a troca e passe a ver tudo num painel só.</p>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px">
+          <li style="display:flex;gap:10px;align-items:center;font:500 15px/1.4 Inter,sans-serif"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8fc792" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Sem fidelidade e sem multa</li>
+          <li style="display:flex;gap:10px;align-items:center;font:500 15px/1.4 Inter,sans-serif"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8fc792" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Portabilidade gratuita</li>
+          <li style="display:flex;gap:10px;align-items:center;font:500 15px/1.4 Inter,sans-serif"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8fc792" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Chip, eSIM e número virtual no mesmo lugar</li>
+        </ul>
+      </div>
+
+      <div data-reveal="" data-delay="120" style="flex:1 1 380px;max-width:520px;background:#241e18;border:1px solid #342c24;border-radius:24px;padding:clamp(22px,2.4vw,32px)">
+        <sc-if value="{{ ff.success }}" hint-placeholder-val="{{ false }}">
+          <div role="status" style="display:flex;flex-direction:column;gap:14px">
+            <span style="width:44px;height:44px;border-radius:50%;background:#325332;display:grid;place-items:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e0ebd6" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span>
+            <h3 style="margin:0;font:500 26px/1.15 Poppins,sans-serif;letter-spacing:-.02em">Recebemos seu contato, {{ ff.first }}.</h3>
+            <p style="margin:0;font:400 16px/1.55 Inter,sans-serif;color:#ddd5c8">Um especialista da Salvy vai falar com você pelo WhatsApp informado para entender sua operação e montar a proposta.</p>
+          </div>
+        </sc-if>
+        <sc-if value="{{ ff.open }}" hint-placeholder-val="{{ true }}">
+          <form onSubmit="{{ ff.submit }}" noValidate="{{ true }}" data-form="final" aria-labelledby="final-form-title" style="display:flex;flex-direction:column;gap:16px">
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <h3 id="final-form-title" style="margin:0;font:500 22px/1.2 Poppins,sans-serif;letter-spacing:-.02em">Receba uma proposta personalizada</h3>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <label for="final-name" style="font:500 13px/1.3 Inter,sans-serif;color:#ede9e2">Nome completo</label>
+              <input id="final-name" name="firstname" type="text" autocomplete="name" placeholder="Nome completo" value="{{ ff.name }}" onChange="{{ ff.onName }}" onFocus="{{ ff.focusName }}" onBlur="{{ ff.blurName }}" aria-invalid="{{ ff.nameInvalid }}" aria-describedby="final-name-msg" style="width:100%;box-sizing:border-box;height:50px;padding:0 14px;background:#181410;border:1px solid {{ ff.nameBorder }};box-shadow:{{ ff.nameRing }};border-radius:8px;color:#fbfaf9;font:400 16px/1 Inter,sans-serif;outline:none;transition:border-color .15s,box-shadow .15s">
+              <sc-if value="{{ ff.nameErr }}"><p id="final-name-msg" role="alert" style="margin:0;font:500 13px/1.4 Inter,sans-serif;color:#f4b3b4">{{ ff.nameErr }}</p></sc-if>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <label for="final-email" style="font:500 13px/1.3 Inter,sans-serif;color:#ede9e2">E-mail corporativo</label>
+              <input id="final-email" name="email" type="email" inputMode="email" autocomplete="email" placeholder="voce@empresa.com.br" value="{{ ff.email }}" onChange="{{ ff.onEmail }}" onFocus="{{ ff.focusEmail }}" onBlur="{{ ff.blurEmail }}" aria-invalid="{{ ff.emailInvalid }}" aria-describedby="final-email-msg" style="width:100%;box-sizing:border-box;height:50px;padding:0 14px;background:#181410;border:1px solid {{ ff.emailBorder }};box-shadow:{{ ff.emailRing }};border-radius:8px;color:#fbfaf9;font:400 16px/1 Inter,sans-serif;outline:none;transition:border-color .15s,box-shadow .15s">
+              <sc-if value="{{ ff.emailErr }}"><p id="final-email-msg" role="alert" style="margin:0;font:500 13px/1.4 Inter,sans-serif;color:#f4b3b4">{{ ff.emailErr }}</p></sc-if>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <label for="final-phone" style="font:500 13px/1.3 Inter,sans-serif;color:#ede9e2">WhatsApp</label>
+              <input id="final-phone" name="phone" type="tel" inputMode="tel" autocomplete="tel-national" placeholder="(11) 98765-4321" value="{{ ff.phone }}" onChange="{{ ff.onPhone }}" onFocus="{{ ff.focusPhone }}" onBlur="{{ ff.blurPhone }}" aria-invalid="{{ ff.phoneInvalid }}" aria-describedby="final-phone-msg" style="width:100%;box-sizing:border-box;height:50px;padding:0 14px;background:#181410;border:1px solid {{ ff.phoneBorder }};box-shadow:{{ ff.phoneRing }};border-radius:8px;color:#fbfaf9;font:400 16px/1 Inter,sans-serif;letter-spacing:.04em;outline:none;transition:border-color .15s,box-shadow .15s">
+              <sc-if value="{{ ff.phoneErr }}"><p id="final-phone-msg" role="alert" style="margin:0;font:500 13px/1.4 Inter,sans-serif;color:#f4b3b4">{{ ff.phoneErr }}</p></sc-if>
+            </div>
+            <div style="margin-top:4px"><dc-import name="Salvy Button" kind="submit" variant="paper" label="Enviar dados" loading="{{ ff.loading }}" track="cta_final_submit" hint-size="100%,56px"></dc-import></div>
+            <p style="margin:0;font:400 13px/1.5 Inter,sans-serif;color:#c3b5a0">Sem compromisso. Usamos seus dados só para este contato, conforme a <a href="https://salvy.com.br/politica-de-privacidade" target="_blank" rel="noopener" style="color:#fbfaf9">política de privacidade</a>.</p>
+          </form>
+        </sc-if>
+      </div>
+    </div>
+  </div>
+  <footer style="max-width:1280px;margin:clamp(88px,10vw,140px) auto 0;padding:28px clamp(20px,4vw,48px) calc(28px + {{ footPad }});display:flex;flex-wrap:wrap;gap:16px 32px;justify-content:space-between;align-items:center;border-top:1px solid #342c24">
+    <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap"><img src="assets/logo-salvy.svg" alt="Salvy" style="height:22px;width:auto;filter:invert(1) brightness(1.1)"><span style="font:400 13px/1.4 Inter,sans-serif;color:#c3b5a0">© 2026 Salvy · Investida pela Y Combinator</span></div>
+    <nav aria-label="Legal" style="display:flex;gap:24px"><a href="https://salvy.com.br/politica-de-privacidade" target="_blank" rel="noopener" style="font:400 13px/1.4 Inter,sans-serif;color:#ddd5c8">Política de privacidade</a><a href="https://salvy.com.br/termos-e-condicoes-linhas-corporativas" target="_blank" rel="noopener" style="font:400 13px/1.4 Inter,sans-serif;color:#ddd5c8">Termos e condições</a></nav>
+  </footer>
+</section>
+
+<sc-if value="{{ modalOpen }}">
+  <div role="dialog" aria-modal="true" aria-labelledby="modal-modal-form-title" style="position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:20px;box-sizing:border-box">
+    <div ref="{{ modalBgRef }}" onClick="{{ closeModal }}" style="position:absolute;inset:0;background:rgba(24,20,16,.62)"></div>
+    <div ref="{{ modalCardRef }}" style="position:relative;width:min(100%,480px);max-height:calc(100vh - 40px);overflow-y:auto;background:#181410;border-radius:24px;padding:clamp(22px,2.4vw,32px);color:#fbfaf9;box-shadow:8px 8px 48px rgba(0,0,0,.4);display:flex;flex-direction:column;gap:24px;box-sizing:border-box">
+      <button type="button" aria-label="Fechar" onClick="{{ closeModal }}" style="all:unset;cursor:pointer;position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;color:#ddd5c8;background:#241e18;transition:background .2s,color .2s" style-hover="background:#342c24;color:#fbfaf9"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
+      <sc-if value="{{ mf.success }}" hint-placeholder-val="{{ false }}">
+          <div role="status" style="display:flex;flex-direction:column;gap:16px;padding:12px 0 8px">
+            <span style="width:48px;height:48px;border-radius:50%;background:#325332;display:grid;place-items:center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e0ebd6" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span>
+            <h2 style="margin:0;font:500 28px/1.15 Poppins,sans-serif;letter-spacing:-.02em">Recebemos seu contato, {{ mf.first }}.</h2>
+            <p style="margin:0;font:400 16px/1.55 Inter,sans-serif;color:#ddd5c8">Um especialista da Salvy vai falar com você pelo WhatsApp informado para entender sua operação e montar a proposta.</p>
+            <a href="#plataforma" onClick="{{ closeModal }}" style="display:inline-flex;align-items:center;gap:8px;color:#fbfaf9;font:600 15px/1 Inter,sans-serif;margin-top:4px">Enquanto isso, veja a plataforma em ação<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ mf.open }}" hint-placeholder-val="{{ true }}">
+          <form onSubmit="{{ mf.submit }}" noValidate="{{ true }}" data-form="modal" aria-labelledby="modal-form-title" style="display:flex;flex-direction:column;gap:18px;scroll-margin-top:96px">
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <h2 id="modal-form-title" style="margin:0;font:500 clamp(22px,2vw,26px)/1.2 Poppins,sans-serif;letter-spacing:-.02em;color:#fbfaf9">Receba uma proposta personalizada</h2>
+              <p style="margin:0;font:400 15px/1.5 Inter,sans-serif;color:#ddd5c8">Nosso time entra em contato com você.</p>
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <label for="modal-name" style="font:500 13px/1.3 Inter,sans-serif;color:#ede9e2">Nome completo</label>
+              <div style="position:relative">
+                <input id="modal-name" name="firstname" type="text" autocomplete="name" placeholder="Nome completo" value="{{ mf.name }}" onChange="{{ mf.onName }}" onFocus="{{ mf.focusName }}" onBlur="{{ mf.blurName }}" aria-invalid="{{ mf.nameInvalid }}" aria-describedby="modal-name-msg" style="width:100%;box-sizing:border-box;height:50px;padding:0 44px 0 14px;background:#241e18;border:1px solid {{ mf.nameBorder }};box-shadow:{{ mf.nameRing }};border-radius:8px;color:#fbfaf9;font:400 16px/1 Inter,sans-serif;outline:none;transition:border-color .15s,box-shadow .15s">
+                <sc-if value="{{ mf.nameOk }}"><svg style="position:absolute;right:14px;top:15px" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8fc792" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></sc-if>
+              </div>
+              <sc-if value="{{ mf.nameErr }}"><p id="modal-name-msg" role="alert" style="margin:0;font:500 13px/1.4 Inter,sans-serif;color:#f4b3b4">{{ mf.nameErr }}</p></sc-if>
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <label for="modal-email" style="font:500 13px/1.3 Inter,sans-serif;color:#ede9e2">E-mail corporativo</label>
+              <div style="position:relative">
+                <input id="modal-email" name="email" type="email" inputMode="email" autocomplete="email" placeholder="voce@empresa.com.br" value="{{ mf.email }}" onChange="{{ mf.onEmail }}" onFocus="{{ mf.focusEmail }}" onBlur="{{ mf.blurEmail }}" aria-invalid="{{ mf.emailInvalid }}" aria-describedby="modal-email-msg" style="width:100%;box-sizing:border-box;height:50px;padding:0 44px 0 14px;background:#241e18;border:1px solid {{ mf.emailBorder }};box-shadow:{{ mf.emailRing }};border-radius:8px;color:#fbfaf9;font:400 16px/1 Inter,sans-serif;outline:none;transition:border-color .15s,box-shadow .15s">
+                <sc-if value="{{ mf.emailOk }}"><svg style="position:absolute;right:14px;top:15px" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8fc792" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></sc-if>
+              </div>
+              <sc-if value="{{ mf.emailErr }}"><p id="modal-email-msg" role="alert" style="margin:0;font:500 13px/1.4 Inter,sans-serif;color:{{ mf.emailMsgColor }}">{{ mf.emailMsg }}</p></sc-if>
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <label for="modal-phone" style="font:500 13px/1.3 Inter,sans-serif;color:#ede9e2">WhatsApp</label>
+              <div style="position:relative">
+                <input id="modal-phone" name="phone" type="tel" inputMode="tel" autocomplete="tel-national" placeholder="(11) 98765-4321" value="{{ mf.phone }}" onChange="{{ mf.onPhone }}" onFocus="{{ mf.focusPhone }}" onBlur="{{ mf.blurPhone }}" aria-invalid="{{ mf.phoneInvalid }}" aria-describedby="modal-phone-msg" style="width:100%;box-sizing:border-box;height:50px;padding:0 44px 0 14px;background:#241e18;border:1px solid {{ mf.phoneBorder }};box-shadow:{{ mf.phoneRing }};border-radius:8px;color:#fbfaf9;font:400 16px/1 Inter,sans-serif;letter-spacing:.04em;outline:none;transition:border-color .15s,box-shadow .15s">
+                <sc-if value="{{ mf.phoneOk }}"><svg style="position:absolute;right:14px;top:15px" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8fc792" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></sc-if>
+              </div>
+              <sc-if value="{{ mf.phoneErr }}"><p id="modal-phone-msg" role="alert" style="margin:0;font:500 13px/1.4 Inter,sans-serif;color:{{ mf.phoneMsgColor }}">{{ mf.phoneMsg }}</p></sc-if>
+            </div>
+
+            <div style="margin-top:4px"><dc-import name="Salvy Button" kind="submit" variant="paper" label="Enviar dados" loading="{{ mf.loading }}" track="cta_modal_submit" hint-size="100%,56px"></dc-import></div>
+            <p style="margin:0;font:400 13px/1.5 Inter,sans-serif;color:#c3b5a0;display:flex;gap:8px;align-items:flex-start"><svg style="flex:none;margin-top:2px" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg><span>Sem compromisso. Usamos seus dados só para este contato, conforme a <a href="https://salvy.com.br/politica-de-privacidade" target="_blank" rel="noopener" style="color:#fbfaf9">política de privacidade</a>.</span></p>
+          </form>
+        </sc-if>
+    </div>
+  </div>
+</sc-if>
+</main>
+
+<sc-if value="{{ sticky }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed;left:12px;right:12px;bottom:12px;z-index:60;background:#181410;color:#fbfaf9;border-radius:14px;padding:10px 10px 10px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;box-shadow:8px 8px 32px rgba(29,41,57,.35)">
+    <span style="font:500 13px/1.3 Inter,sans-serif;color:#ddd5c8">Sem fidelidade, sem 0800.</span>
+    <dc-import name="Salvy Button" label="Receber proposta" variant="paper" size="sm" track="cta_sticky_mobile" on-click="{{ goForm }}" hint-size="186px,44px"></dc-import>
+  </div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;headline&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Sem 0800, sem fidelidade&quot;,&quot;Operadora num painel só&quot;,&quot;Planos sem fidelidade (controle)&quot;],&quot;default&quot;:&quot;Sem 0800, sem fidelidade&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Teste A/B&quot;},&quot;cta&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Quero minha proposta&quot;,&quot;Falar com a Salvy&quot;,&quot;Receber proposta&quot;],&quot;default&quot;:&quot;Quero minha proposta&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Teste A/B&quot;},&quot;blockFreeEmail&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Formulário&quot;}}">
+const EASE = 'cubic-bezier(.16,1,.3,1)';
+const FREE = ['gmail.com','googlemail.com','hotmail.com','hotmail.com.br','outlook.com','outlook.com.br','live.com','msn.com','yahoo.com','yahoo.com.br','icloud.com','me.com','bol.com.br','uol.com.br','terra.com.br','ig.com.br','proton.me','protonmail.com'];
+const NUMS = [['+55 (41) 98469-7555','eSIM · 5 GB'],['+55 (11) 97238-4561','Chip · 10 GB'],['+55 (21) 99469-2647','Número virtual · WhatsApp']];
+const LOGOS = [
+  ['Hotmart',(window.__resources&&window.__resources.r0||'https://framerusercontent.com/images/DTToyHm0U4rZlXsZncEBNYCvRA.webp')],
+  ['Alice',(window.__resources&&window.__resources.r1||'https://framerusercontent.com/images/gLfa6xBq7GNt2cVvJHhEzLeBQy0.png')],
+  ['iFood',(window.__resources&&window.__resources.r2||'https://framerusercontent.com/images/ZvVXrvqYdcTRHEzNFsi75f2Z2GA.webp')],
+  ['Méliuz',(window.__resources&&window.__resources.r3||'https://framerusercontent.com/images/OIV8lLwKZdh6XQ6CjXuf9th1Tk.png')],
+  ['Caju',(window.__resources&&window.__resources.r4||'https://framerusercontent.com/images/18C5d8TOrAsinVEJxS8wPo7c4.png')],
+  ['Beep Saúde',(window.__resources&&window.__resources.r5||'https://framerusercontent.com/images/whgtUmudTNvA3VRMAnhA3nvhLQ.png')],
+  ['Asaas',(window.__resources&&window.__resources.r6||'https://framerusercontent.com/images/igDusTvoXKEDvKTeXJXuZcr0nts.png')],
+  ['Conta Azul',(window.__resources&&window.__resources.r7||'https://framerusercontent.com/images/Pz8HvjznvnTE7AAYQa7rruOerQ.png')],
+  ['CRMBonus',(window.__resources&&window.__resources.r8||'https://framerusercontent.com/images/tiWP9jndp7nAsCeEl8o44md46dM.png')],
+  ['Pier',(window.__resources&&window.__resources.r9||'https://framerusercontent.com/images/yhtQDRhYlZu7wS3yXV8Kg1akqo.png')]
+];
+const PAINS = [
+  { old:'4.555 páginas de fatura para entender o que a empresa paga', now:'Consumo por linha e por área, em tempo real.', proof:'A Beep Saúde tinha uma fatura de 4.555 páginas. Hoje vê as 2.000 linhas de 5 CNPJs num painel.' },
+  { old:'Ligar no 0800 e torcer para cair em outro atendente', now:'Ativar, bloquear e trocar plano direto no painel, em minutos.', proof:'Caso Wiser: 300 linhas de 5 empresas, sem ligar para nenhum 0800.' },
+  { old:'Esperar um mês pelo chip', now:'Chip entregue ou eSIM ativado por QR Code.', proof:'Caso Beep: de 1 mês esperando chip para 1 dia.' },
+  { old:'Pagar por linha que ninguém usa', now:'Linhas ociosas à vista, canceladas quando você decidir.', proof:'Caso Alice: quase metade das 655 linhas não era usada.' },
+  { old:'Contrato com fidelidade e multa para sair', now:'Sem fidelidade. Você fica porque funciona.', proof:'' }
+];
+const CATS = [
+  { n:'01', k:'Conectividade', t:'A linha', items:['chip','esim','virtual','global'] },
+  { n:'02', k:'Gestão', t:'O painel', items:['painel','consumo','ativos','mdm'] },
+  { n:'03', k:'Automação', t:'A operação sozinha', items:['mcp','api'] }
+];
+const PRODS = {
+  chip:{ name:'Chip corporativo', desc:'Dados, ligações e SMS com cobertura nacional e WhatsApp Business incluso. Você pede no painel e acompanha a entrega.', resolve:'linha confiável para vendas, atendimento e operação na rua.' },
+  esim:{ name:'eSIM empresarial', desc:'A mesma linha completa, sem chip físico. O colaborador ativa pelo app com um QR Code e começa a usar em minutos.', resolve:'quem entrou hoje já sai com número hoje.' },
+  virtual:{ name:'Número virtual', desc:'Número para ativar o WhatsApp Business na API oficial da Meta, sem chip. O código de verificação chega no painel ou por webhook. Não tem dados nem ligações.', resolve:'plataformas de atendimento, automações e agentes de IA no WhatsApp.' },
+  global:{ name:'eSIM Global', desc:'Dados no exterior em mais de 100 países, com planos fixos de 5, 10 ou 15 GB e sem fidelidade. Dados extras liberados na hora pelo painel.', resolve:'roaming caro e chip comprado no aeroporto em viagem a trabalho.' },
+  painel:{ name:'Painel de gestão', desc:'Todas as linhas, planos e usuários num só lugar, atualizados em tempo real. Ative, bloqueie ou troque o plano sem abrir chamado.', resolve:'a planilha paralela e a fila no 0800.' },
+  consumo:{ name:'Linhas, consumo e faturas', desc:'Saldo de internet, SMS e ligações de cada linha, histórico de consumo e fatura prevista. Centro de custo em cada linha para o rateio fechar.', resolve:'fatura que ninguém entende e linha paga sem uso.' },
+  ativos:{ name:'Gestão de ativos', desc:'Celulares, notebooks e monitores com dono, linha vinculada e histórico. O inventário da empresa no mesmo painel da telefonia.', resolve:'não saber qual aparelho está com quem.' },
+  mdm:{ name:'Salvy MDM', isNew:true, desc:'Controle remoto dos celulares Android da empresa: bloquear, configurar e liberar sem tocar no aparelho. Diferente da gestão de ativos, aqui você age no dispositivo.', resolve:'desligamento, aparelho perdido e configuração de aparelho novo.' },
+  mcp:{ name:'Salvy MCP', isNew:true, desc:'Controle as linhas da empresa pelo ChatGPT ou pelo Claude. Você pede, a Salvy entende, recomenda e executa.', resolve:'tarefas repetidas de telefonia, resolvidas numa conversa.' },
+  api:{ name:'Salvy API', isNew:true, desc:'Conecte a Salvy ao RH, ao ERP ou ao seu produto. Quando algo acontece lá, a telefonia se ajusta sozinha.', resolve:'admissão, desligamento e fechamento do mês sem ninguém clicar.' }
+};
+const DEMOS = {
+  chip:{ head:'Pedido de chips', tag:'Conectividade', foot:'WhatsApp Business incluso em cada linha', rows:[['Pedido feito','10 chips · plano 5 GB','feito','green'],['Processando','Separação e envio','ok','green'],['Enviado','Entrega acompanhada no painel','a caminho','blue'],['Entregue','Ativação pelo app Salvy','próximo','gray']] },
+  esim:{ head:'eSIM empresarial', tag:'Conectividade', foot:'Dados, ligações e SMS, sem chip físico', rows:[['QR Code enviado','Para o novo colaborador','enviado','blue'],['Ativação pelo app','Leitura do QR Code','em minutos','gray'],['Linha ativa','+55 (11) 97238-4561','ativa','green','mono']] },
+  virtual:{ head:'Número virtual', tag:'Conectividade', foot:'Sem dados e sem ligações: feito para WhatsApp', rows:[['Número criado','(11) 9 ••••-4561','ativo','green','mono'],['WhatsApp Business','API oficial da Meta','conectado','blue'],['Código de verificação','No painel e no seu sistema, via webhook','recebido','green']] },
+  global:{ head:'eSIM Global', tag:'Conectividade', foot:'Gerido no mesmo painel das linhas no Brasil', rows:[['Destino','Mais de 100 países','100+','ink'],['Plano fixo','5, 10 ou 15 GB','10 GB','blue'],['Dados extras','Liberados na hora pelo painel','liberar','gray'],['Fidelidade','Nenhuma','sem','green']] },
+  painel:{ head:'Linhas telefônicas', tag:'Gestão', foot:'Atualizado em tempo real', rows:[['Total de linhas','Todas as linhas da empresa','450','ink'],['Ativas','Em uso agora','27','green'],['Aguardando ativação','Prontas para o colaborador','10','yellow'],['Bloqueadas','Bloqueio pelo painel, sem chamado','65','red']] },
+  consumo:{ head:'Saldo disponível da linha', tag:'Gestão', foot:'Histórico de consumo e fatura prevista', rows:[['Internet disponível','de 10 GB','5 GB','blue'],['SMS disponíveis','de 50','12','blue'],['Ligações disponíveis','Plano atual','ilimitadas','green'],['Centro de custo','Para o rateio fechar','sales b2b','gray']] },
+  ativos:{ head:'Equipamentos vinculados', tag:'Gestão', foot:'O inventário no mesmo painel da telefonia', rows:[['Apple iPhone 16 Pro','@anderson carvalho','vinculado','green'],['Apple MacBook Air','@carla araújo ramos','vinculado','green'],['Samsung Galaxy S3','@roberta amarante jr.','vinculado','green']] },
+  mdm:{ head:'Salvy MDM · Android', tag:'Gestão', foot:'Você age no aparelho sem tocar nele', rows:[['Colaborador desligado','Senha redefinida, aparelho pronto para outra pessoa','aplicado','blue'],['Aparelho perdido','Modo perdido, acesso bloqueado e localização','remoto','blue'],['App não autorizado','Você define quais apps rodam na operação','política','blue'],['Aparelho novo','Configurado em poucos minutos com um QR Code','QR Code','blue']] },
+  mcp:{ head:'Salvy MCP', logos:true, tag:'Automação', foot:'Funciona com ChatGPT, Claude, Cursor, n8n e Zapier', rows:[['Você pede','“Me diga o que precisa da minha atenção.”','pedido','gray'],['Entender','Consumo do ciclo, linhas ativas, entradas e saídas','lido','blue'],['Recomendar','Seis linhas sem uso há mais de trinta dias','sugestão','yellow'],['Executar','Resolvo agora. O plano muda no próximo ciclo.','feito','green']] },
+  api:{ head:'Registro da Salvy API', tag:'Automação', foot:'Ao vivo: a telefonia se ajusta sozinha', rows:[['Ana Ribeiro foi admitida','10:39 · Linha ativada e vinculada a ela','RH','gray'],['Cliente novo no WhatsApp','10:42 · Número virtual criado para ele','Produto','gray'],['Bruno Lima foi desligado','10:45 · Linha bloqueada no mesmo minuto','RH','gray'],['O mês fechou','10:48 · Fatura e consumo no seu ERP','ERP','gray']] }
+};
+const DTONE = { green:['#e0ebd6','#325332'], blue:['#d9e4f2','#203f60'], yellow:['#f6f1cb','#6d4d13'], red:['#f8d6d8','#8e141c'], gray:['#f4f2ee','#534a3d'] };
+const SCENS = [
+  { label:'Alguém saiu da empresa',
+    painel:{ title:'Linha', rows:[{k:'Colaborador',v:'Bruno Lima'},{k:'Número',v:'(31) 97845-3612',mono:true},{k:'Situação',v:'ativa',v2:'bloqueada',tone:'green',tone2:'red'}], actions:['Alterar plano da linha','Bloquear linha','Cancelar linha'], act:1, caption:'Ações › Bloquear linha. Uma por uma ou em massa.' },
+    chat:{ ask:'Essas cinco pessoas foram desligadas. Bloqueia as linhas.', l1:'Entender', t1:'Encontrei as cinco linhas ativas vinculadas a elas.', l2:'Executar', w2:'Bloqueando…', t2:'Linhas bloqueadas.', caption:'Você pede. A Salvy entende e executa.' },
+    api:{ via:'Salvy API · integrada ao RH', where:'Acontece no seu RH', event:'Bruno saiu da empresa', result:'Linha bloqueada no mesmo dia', caption:'Nada de consumo depois da saída.' } },
+  { label:'Um time mudou de área',
+    painel:{ title:'Informações da linha', rows:[{k:'Colaborador',v:'Camila Santos'},{k:'Centro de custo',v:'growth',v2:'marketing',tone:'gray',tone2:'blue'},{k:'Tipo de linha',v:'eSIM'}], caption:'Editar › Centro de custo. Para uma linha ou para o time todo.' },
+    chat:{ ask:'Move o time de Growth para o centro de custo Marketing.', l1:'Entender', t1:'Encontrei as linhas do time de Growth.', l2:'Executar', w2:'Atualizando…', t2:'Centro de custo atualizado.', caption:'Você pede. A Salvy entende e executa.' },
+    api:{ via:'Salvy API · integrada ao RH', where:'Acontece no seu RH', event:'Um time mudou de área', result:'Centro de custo atualizado nas linhas', caption:'Rateio certo no fechamento do mês.' } },
+  { label:'O mês fechou',
+    painel:{ title:'Consumo por centro de custo', rows:[], bars:[['sales b2b','82%'],['customer success','64%'],['marketing','46%'],['onboarding','28%']], caption:'Faturas e relatórios por linha e por área.' },
+    chat:{ ask:'Quanto cada área gastou com telefonia?', l1:'Entender', t1:'Li a fatura do ciclo e o centro de custo de cada linha.', l2:'Responder', w2:'Somando…', t2:'Aqui está o gasto por área.', caption:'Pergunte do jeito que você falaria.' },
+    api:{ via:'Salvy API · integrada ao ERP', where:'Acontece no seu ERP', event:'O mês fechou', result:'Fatura e consumo enviados ao ERP', caption:'Conciliação sem pedir documento a ninguém.' } },
+  { label:'O que pede atenção',
+    painel:{ title:'Quadro de avisos', rows:[], alertBadge:'dados móveis baixos', alert:'20 números com 75% dos dados consumidos', caption:'Avisos na tela inicial antes de virar problema.' },
+    chat:{ ask:'Me diga o que precisa da minha atenção.', l1:'Recomendar', t1:'Seis linhas sem uso há mais de trinta dias. Sugiro bloquear.', l2:'Executar', w2:'Aguardando seu ok…', t2:'Resolvo agora.', caption:'Recomenda e espera você decidir.' },
+    api:{ via:'Maestro · saldo e plano', where:'Antes da fatura', event:'Passou do pacote', result:'Sobe de plano', caption:'Corrige o plano antes de a fatura fechar.' } }
+];
+const SIMPLE = [
+  { who:'Bruno Lima', sub:'(31) 97845-3612', mono:true, from:['ativa','green'], to:['bloqueada','red'], action:'Bloquear linha', answer:'Encontrei as cinco linhas ativas vinculadas a elas. Linhas bloqueadas.', done:'feito' },
+  { who:'Camila Santos', sub:'Centro de custo', from:['growth','gray'], to:['marketing','blue'], action:'Editar centro de custo', answer:'Encontrei as linhas do time de Growth. Centro de custo atualizado.', done:'feito' },
+  { who:'Fatura do ciclo', sub:'Por linha e por área', from:['fechando','gray'], to:['pronta','green'], action:'Ver relatório por área', answer:'Li a fatura do ciclo e o centro de custo de cada linha. Aqui está o gasto por área.', done:'respondido' },
+  { who:'20 números', sub:'75% dos dados consumidos', from:['dados baixos','yellow'], to:['plano ajustado','green'], action:'Ajustar plano', answer:'Seis linhas sem uso há mais de trinta dias. Sugiro bloquear. Resolvo agora?', done:'aguardando seu ok' }
+];
+const TONES = { green:['#e0ebd6','#325332'], red:['#f8d6d8','#8e141c'], blue:['#d9e4f2','#203f60'], gray:['#ede9e2','#534a3d'], yellow:['#f6f1cb','#6d4d13'] };
+const DIFS = [
+  ['Sem fidelidade','Mude ou cancele planos e linhas quando precisar, sem multa.'],
+  ['Tudo num painel só','Linhas, planos, usuários e faturas no mesmo lugar, atualizados em tempo real.'],
+  ['Ativação em minutos','Novo colaborador entrou? Ele recebe a linha no mesmo dia. O eSIM ativa por QR Code.'],
+  ['Portabilidade gratuita','Leve seus números atuais sem custo. A linha segue funcionando durante a troca.'],
+  ['Controle de gastos','Consumo por linha e por área. Linha ociosa aparece antes de pesar na fatura.'],
+  ['Suporte de verdade','Uma equipe que resolve, sem deslocamento e sem longas esperas ao telefone.'],
+  ['Pronta para automatizar','MCP, API e MDM para quando a operação crescer e o clique virar gargalo.']
+];
+const DIF_ICONS = [
+  '<rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 7.5-2"/>',
+  '<rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/>',
+  '<path d="M13 2 4 14h7l-1 8 9-12h-7z"/>',
+  '<path d="M8 3 4 7l4 4M4 7h16M16 21l4-4-4-4M20 17H4"/>',
+  '<path d="M21 12A9 9 0 1 1 12 3v9z"/><path d="M15 3.5A9 9 0 0 1 20.5 9H15z"/>',
+  '<path d="M4 14v-3a8 8 0 0 1 16 0v3"/><rect x="2" y="14" width="5" height="6" rx="2"/><rect x="17" y="14" width="5" height="6" rx="2"/>',
+  '<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><path d="M10 6.5h4a3 3 0 0 1 3 3V14"/>'
+];
+const CASE_LOGOS = { 'Alice':(window.__resources&&window.__resources.r1||'https://framerusercontent.com/images/gLfa6xBq7GNt2cVvJHhEzLeBQy0.png'), 'Beep Saúde':(window.__resources&&window.__resources.r5||'https://framerusercontent.com/images/whgtUmudTNvA3VRMAnhA3nvhLQ.png'), 'Wiser':(window.__resources&&window.__resources.r10||'assets/logo-wiser.png'), 'Lastro':(window.__resources&&window.__resources.r11||'assets/logo-lastro.png') };
+const CASES = [
+  { co:'Alice', sector:'Saúde', big:'61,7', unit:'%', label:'de redução na conta mensal de telefonia', detail:'R$ 280 mil de economia por ano · 305 linhas canceladas em 2 dias', quote:'Telefonia virou uma não-agenda. Está ali, funciona, não precisa resolver nada.', who:'Guilherme Azevedo', role:'CEO da Alice', href:'https://salvy.com.br/cases/alice' },
+  { co:'Wiser', sector:'Educação', big:'5 → 1', unit:'', label:'empresas do grupo, 300 linhas, um painel só', detail:'Ativações, cancelamentos e ajustes em minutos, sem 0800', quote:'A gente não precisa dizer o que quer, vocês trazem pra gente.', who:'Francisco Leta', role:'CXO e Diretor de TI da Wiser', href:'https://salvy.com.br/cases/wiser' },
+  { co:'Beep Saúde', sector:'Saúde', big:'84', unit:'%', label:'de redução na fatura', detail:'473 linhas ociosas canceladas · 2.000 linhas de 5 CNPJs num painel', quote:'Ficamos 1 mês esperando chip. Com a Salvy, chegou em 1 dia.', who:'Shibe Cyranka', role:'CTO da Beep Saúde', href:'https://salvy.com.br/cases/beep' },
+  { co:'Lastro', sector:'Tecnologia', big:'Segundos', unit:'', label:'para ativar o número de um novo cliente, antes eram semanas', detail:'Números virtuais via API, direto do back-office', quote:'Antes da Salvy, nossas vendas ficavam travadas porque nossos clientes tinham que correr atrás de comprar linhas.', who:'Vitor Leal', role:'CTO da Lastro', href:'https://salvy.com.br/cases/lastro' }
+];
+const PLAN_TABS = [
+  { id:'dados', label:'Com dados móveis', icon:'<path d="M2 8.82a15 15 0 0 1 20 0"/><path d="M5 12.86a10 10 0 0 1 14 0"/><path d="M8.5 16.43a5 5 0 0 1 7 0"/><circle cx="12" cy="20" r="1"/>' },
+  { id:'wa', label:'Uso só no WhatsApp', wa:true },
+  { id:'intl', label:'Uso internacional', icon:'<circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/>' }
+];
+const DADOS_FEATS = ['Chip físico ou eSIM','Ligações nacionais ilimitadas','Dashboard de gestão','Sem fidelidade'];
+const GLOBAL_FEATS = ['Funciona em 150+ países','Ative e use na hora','Sem fidelidade'];
+const PLANS = {
+  dados: { title:'Escolha a franquia de dados', sub:'Chip físico ou eSIM. Todos os planos incluem ligações ilimitadas e o dashboard de gestão.', list:[['1 GB',29.9],['3 GB',44.9],['5 GB',49.9],['10 GB',59.9],['15 GB',79.9],['20 GB',99.9]].map(([name, price]) => ({ name, price, feats:DADOS_FEATS })) },
+  wa: { title:'Planos para o WhatsApp', sub:'Uma linha dedicada só pro WhatsApp Business do seu time: eSIM com dados ou número virtual pra integrar com a API oficial.', list:[
+    { name:'Plano WhatsApp', price:23.9, feats:['Chip físico','Um número apenas para WhatsApp Business','Sem fidelidade'] },
+    { name:'WhatsApp Ilimitado', price:29.9, feats:['Um número apenas para WhatsApp Business','Ativação em segundos','Com dados ilimitados somente para uso do WhatsApp','Sem fidelidade'] },
+    { name:'Número virtual', price:29.9, badge:'API oficial da Meta', feats:['Sem necessidade de chip físico ou eSIM','Sem dados e sem ligação','Ideal para API Oficial da Meta'] }
+  ] },
+  intl: { title:'Planos para uso internacional', sub:'eSIM Global pra usar em 150+ países. Funciona em paralelo com sua linha Salvy do Brasil.', list:[['5 GB',69.9],['10 GB',119.9],['15 GB',179.9]].map(([name, price]) => ({ name, price, feats:GLOBAL_FEATS })) }
+};
+const FAQS = [
+  ['A Salvy é uma operadora de verdade?','Sim. A Salvy é uma operadora móvel virtual (MVNO) focada em empresas. Funciona sobre a infraestrutura de rede das grandes operadoras do Brasil e cuida de contratação, ativação, gestão, cobrança e suporte num painel só.'],
+  ['Existe fidelidade ou multa de cancelamento?','Não. Você muda ou cancela planos e linhas quando precisar, sem multa.'],
+  ['Posso manter os números da minha empresa?','Sim. A portabilidade é gratuita e a linha segue funcionando durante a troca. Você acompanha cada etapa em tempo real.'],
+  ['Qual a diferença entre chip, eSIM e número virtual?','Chip e eSIM são linhas completas, com dados, ligações e SMS. O chip é físico e chega por entrega. O eSIM é ativado por QR Code. O número virtual não tem dados nem ligações: serve para ativar o WhatsApp Business na API oficial da Meta, sem chip.'],
+  ['Quanto tempo leva para ativar uma linha?','O eSIM pode ser usado minutos depois da ativação por QR Code, e o número virtual ativa em segundos. O chip físico depende da entrega até o endereço que você escolher.'],
+  ['Funciona para times espalhados pelo Brasil?','Sim. Os planos têm cobertura nacional e você acompanha todas as linhas no mesmo painel, estejam onde estiverem.'],
+  ['O que acontece depois que eu envio meus dados?','Um especialista da Salvy entra em contato pelo WhatsApp ou e-mail que você informou para entender quantas linhas, que tipo de uso e quais sistemas a empresa tem. A partir disso, monta a proposta com você.']
+];
+const blankForm = () => ({ name:'', email:'', phone:'', touched:{}, tried:false, focus:'', status:'idle' });
+const maskPhone = v => { const d = v.replace(/\D/g,'').replace(/^55(?=\d{10,11}$)/,'').slice(0,11); if (!d) return ''; if (d.length<3) return '('+d; if (d.length<7) return '('+d.slice(0,2)+') '+d.slice(2); if (d.length<11) return '('+d.slice(0,2)+') '+d.slice(2,6)+'-'+d.slice(6); return '('+d.slice(0,2)+') '+d.slice(2,7)+'-'+d.slice(7); };
+
+class Component extends DCLogic {
+  state = { w: 1280, scrolled:false, cat:0, prod:'chip', pstep:4, gplan:1, scen:0, step:4, caseI:0, faq:0, tick:0, sticky:false, forms:{ hero:blankForm(), final:blankForm(), modal:blankForm() }, modalOpen:false };
+  heroFormRef = React.createRef(); modalCardRef = React.createRef(); modalBgRef = React.createRef(); planPanelRef = React.createRef(); marqueeRef = React.createRef(); tkNumRef = React.createRef(); tkBarRef = React.createRef(); shotRef = React.createRef(); phoneRef = React.createRef(); finalRef = React.createRef();
+  timers = []; ptimers = [];
+
+  componentDidMount() {
+    this.reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this.onResize = () => this.setState({ w: window.innerWidth }, this.onScroll);
+    window.addEventListener('resize', this.onResize);
+    this.onScroll = this.onScroll.bind(this);
+    window.addEventListener('scroll', this.onScroll, { passive:true });
+    this.setState({ w: window.innerWidth });
+    this.tickT = setInterval(() => this.setState(s => ({ tick: s.tick + 1 })), 2000);
+    if (!this.reduced) this.setState({ step:0, pstep:0 });
+    this.introHero();
+    let sec = 47*60 + 12;
+    this.holdT = setInterval(() => { sec++; const el = document.querySelector('[data-hold-timer]'); if (el) el.textContent = String(Math.floor(sec/60)).padStart(2,'0') + ':' + String(sec%60).padStart(2,'0'); }, 1000);
+    if (!this.reduced && this.marqueeRef.current) this.marquee = this.marqueeRef.current.animate([{ transform:'translateX(0)' }, { transform:'translateX(-50%)' }], { duration:45000, iterations:Infinity });
+    setTimeout(() => { this.setupReveal(); this.onScroll(); }, 50);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onResize); window.removeEventListener('scroll', this.onScroll);
+    clearInterval(this.tickT); clearInterval(this.holdT); clearInterval(this.typeT); this.timers.forEach(clearTimeout); this.ptimers.forEach(clearTimeout); this.io && this.io.disconnect();
+  }
+  componentDidUpdate() {
+    if (this._lastTick !== this.state.tick) { this._lastTick = this.state.tick; this.animTicker(); }
+    if (this._lastCase === undefined) { this._lastCase = this.state.caseI; return; }
+    if (this._lastCase !== this.state.caseI) {
+      this._lastCase = this.state.caseI;
+      if (this.reduced) return;
+      const el = document.querySelector('[data-case-panel]');
+      el && el.animate([{ opacity:0, transform:'translateY(12px)' }, { opacity:1, transform:'none' }], { duration:520, easing:EASE });
+    }
+  }
+  animCmp(card) {
+    if (this.reduced || card._anim) return; card._anim = true;
+    const q = s => card.querySelectorAll('[data-a="' + s + '"]');
+    const i = el => +(el.dataset.i || 0);
+    q('in').forEach(el => el.animate([{ opacity:0, transform:'translateY(14px)' }, { opacity:1, transform:'none' }], { duration:700, delay:350 + i(el)*180, easing:EASE, fill:'backwards' }));
+    q('bar').forEach(el => el.animate([{ transform:'scaleX(0)' }, { transform:'scaleX(1)' }], { duration:1100, delay:600 + i(el)*160, easing:EASE, fill:'backwards' }));
+    q('from').forEach(el => el.animate([{ opacity:1, transform:'none' }, { opacity:1, offset:.55 }, { opacity:0, transform:'translateY(-6px)' }], { duration:1900, delay:400, easing:EASE, fill:'both' }));
+    q('to').forEach(el => el.animate([{ opacity:0, transform:'translateY(6px)' }, { opacity:0, offset:.6 }, { opacity:1, transform:'none' }], { duration:1900, delay:400, easing:EASE, fill:'both' }));
+    q('press').forEach(el => el.animate([{ boxShadow:'none', transform:'none' }, { boxShadow:'inset 3px 3px 8px rgba(0,0,0,.55)', offset:.5 }, { boxShadow:'none' }], { duration:600, delay:1100, easing:'ease-out' }));
+    q('scan').forEach(el => el.animate([{ top:'4px', opacity:1 }, { top:'54px', opacity:1 }], { duration:700, delay:600, iterations:2, direction:'alternate', easing:'ease-in-out' }));
+    q('check').forEach(el => el.animate([{ transform:'scale(0)', opacity:0 }, { transform:'scale(1.15)', opacity:1, offset:.7 }, { transform:'scale(1)', opacity:1 }], { duration:450, delay:900 + i(el)*280, easing:EASE, fill:'backwards' }));
+    q('toggle-bg').forEach(el => el.animate([{ backgroundColor:'#cbcbcb' }, { backgroundColor:'#cbcbcb', offset:.3 }, { backgroundColor:'#4b9b4e', offset:.4 }, { backgroundColor:'#4b9b4e', offset:.9 }, { backgroundColor:'#cbcbcb' }], { duration:3600, delay:800, iterations:Infinity, easing:'ease-in-out' }));
+    q('toggle-knob').forEach(el => el.animate([{ transform:'translateX(-16px)' }, { transform:'translateX(-16px)', offset:.3 }, { transform:'none', offset:.4 }, { transform:'none', offset:.9 }, { transform:'translateX(-16px)' }], { duration:3600, delay:800, iterations:Infinity, easing:EASE }));
+    q('stamp').forEach(el => { el.animate([{ opacity:0, transform:'rotate(-8deg) scale(2.4)' }, { opacity:1, transform:'rotate(-8deg) scale(.92)', offset:.7 }, { opacity:1, transform:'rotate(-8deg) scale(1)' }], { duration:520, delay:900, easing:'cubic-bezier(.5,0,.75,0)', fill:'backwards' }); const c = card.querySelector('[data-a="stamp"]').parentElement; c.animate([{ transform:'none' }, { transform:'translate(1px,2px)' }, { transform:'translate(-1px,-1px)' }, { transform:'none' }], { duration:220, delay:1260 }); });
+  }
+  openModal(e) {
+    e && e.preventDefault && e.preventDefault();
+    this._lastFocus = document.activeElement;
+    this.setState({ modalOpen:true }, () => {
+      document.documentElement.style.overflow = 'hidden';
+      if (!this.reduced) {
+        this.modalBgRef.current && this.modalBgRef.current.animate([{ opacity:0 }, { opacity:1 }], { duration:250, easing:'ease-out' });
+        this.modalCardRef.current && this.modalCardRef.current.animate([{ opacity:0, transform:'translateY(16px) scale(.96)' }, { opacity:1, transform:'none' }], { duration:450, easing:EASE });
+      }
+      const inp = document.getElementById('modal-name'); inp && setTimeout(() => inp.focus({ preventScroll:true }), 60);
+      this._esc = ev => { if (ev.key === 'Escape') this.closeModal(); };
+      document.addEventListener('keydown', this._esc);
+    });
+  }
+  closeModal(e) {
+    if (e && e.currentTarget && e.currentTarget.tagName === 'A') { /* deixa o link navegar */ } else if (e && e.preventDefault) e.preventDefault();
+    document.removeEventListener('keydown', this._esc);
+    const done = () => { document.documentElement.style.overflow = ''; this.setState({ modalOpen:false }); this._lastFocus && this._lastFocus.focus && this._lastFocus.focus({ preventScroll:true }); };
+    const c = this.modalCardRef.current, bg = this.modalBgRef.current;
+    if (this.reduced || !c) return done();
+    bg && bg.animate([{ opacity:1 }, { opacity:0 }], { duration:200, fill:'forwards' });
+    c.animate([{ opacity:1, transform:'none' }, { opacity:0, transform:'translateY(10px) scale(.98)' }], { duration:200, easing:'ease-in', fill:'forwards' }).onfinish = done;
+  }
+  setPlanTab(id) {
+    if ((this.state.planTab || 'dados') === id) return;
+    this.setState({ planTab:id }, () => {
+      if (this.reduced) return;
+      const el = this.planPanelRef.current; if (!el) return;
+      el.querySelectorAll('[data-plan]').forEach((c, i) => c.animate([{ opacity:0, transform:'translateY(12px)' }, { opacity:1, transform:'none' }], { duration:500, delay:i * 50, easing:EASE, fill:'backwards' }));
+    });
+  }
+  animTicker() {
+    if (this.reduced || this.state.tick % 2 !== 0) return;
+    const el = this.tkNumRef.current; if (!el) return;
+    const full = NUMS[Math.floor(this.state.tick / 2) % NUMS.length][0];
+    clearInterval(this.typeT); let n = 0; el.textContent = '';
+    this.typeT = setInterval(() => { n++; el.textContent = full.slice(0, n); if (n >= full.length) clearInterval(this.typeT); }, 45);
+  }
+  introHero() {
+    if (this.reduced) return;
+    const h1 = document.querySelector('[data-hero-h1]');
+    h1 && h1.animate([{ clipPath:'inset(0 0 100% 0)', transform:'translateY(24px)' }, { clipPath:'inset(0 0 -10% 0)', transform:'none' }], { duration:800, easing:EASE });
+    document.querySelectorAll('[data-hero-in]').forEach(el => {
+      const i = +el.dataset.heroIn;
+      el.animate([{ opacity:0, transform:'translateY(14px)' }, { opacity:1, transform:'none' }], { duration:700, delay:120 + i*70, easing:EASE, fill:'backwards' });
+    });
+  }
+  setupReveal() {
+    const io = this.io = new IntersectionObserver(entries => entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target; io.unobserve(el);
+      if (el.id === 'plataforma') return this.runScen(this.state.scen);
+      if (el.id === 'produtos') return this.runProd();
+      if (el.hasAttribute('data-cmp')) this.animCmp(el);
+      const d = +(el.dataset.delay || 0);
+      if (el.hasAttribute('data-strike')) { el.style.transition = `background-size 1s ${EASE} ${d + 150}ms`; el.style.backgroundSize = '100% 2px'; return; }
+      el.style.transition = `opacity .9s ${EASE} ${d}ms, transform .9s ${EASE} ${d}ms`;
+      el.style.opacity = '1'; el.style.transform = 'none';
+    }), { rootMargin:'0px 0px -12% 0px', threshold:0 });
+    ['plataforma','produtos'].forEach(id => { const s = document.getElementById(id); s && io.observe(s); });
+    if (this.reduced) { this.setState({ step:4, pstep:4 }); return; }
+    document.querySelectorAll('[data-cmp]').forEach(el => { if (el.getBoundingClientRect().top <= window.innerHeight * .88) setTimeout(() => this.animCmp(el), 200); });
+    const vh = window.innerHeight;
+    document.querySelectorAll('[data-reveal]').forEach(el => { if (el.getBoundingClientRect().top > vh * .88) { el.style.opacity = '0'; el.style.transform = 'translateY(28px)'; io.observe(el); } });
+    document.querySelectorAll('[data-strike]').forEach(el => { if (el.getBoundingClientRect().top > vh * .88) { el.style.backgroundSize = '0% 2px'; io.observe(el); } });
+  }
+  onScroll() {
+    const vh = window.innerHeight;
+    const scrolled = window.scrollY > 8;
+    const shot = this.shotRef.current, ph = this.phoneRef.current;
+    if (shot && !this.reduced) {
+      const r = shot.getBoundingClientRect();
+      const p = Math.min(1, Math.max(0, (vh - r.top) / (vh * .85)));
+      shot.style.transform = `perspective(1800px) rotateX(${((1-p)*16).toFixed(2)}deg) scale(${(.9 + .1*p).toFixed(4)})`;
+      if (ph) ph.style.transform = `translateY(${((1-p)*140).toFixed(1)}px) rotate(${((1-p)*-6).toFixed(2)}deg)`;
+    }
+    const f = this.heroFormRef.current, fin = this.finalRef.current;
+    const sticky = window.innerWidth < 900 && !!f && f.getBoundingClientRect().bottom < 0 && !!fin && fin.getBoundingClientRect().top > vh * .6;
+    if (scrolled !== this.state.scrolled || sticky !== this.state.sticky) this.setState({ scrolled, sticky });
+  }
+  seq(key, timersKey, gap, start) {
+    this[timersKey].forEach(clearTimeout); this[timersKey] = [];
+    if (this.reduced) { this.setState({ [key]:4 }); return; }
+    this.setState({ [key]:0 });
+    [1,2,3,4].forEach((n, k) => this[timersKey].push(setTimeout(() => this.setState({ [key]:n }), start + k*gap)));
+  }
+  runScen(i) { this.setState({ scen:i }); this.seq('step', 'timers', 700, 200); }
+  runProd(id) { if (id) this.setState({ prod:id }); this.seq('pstep', 'ptimers', 420, 120); }
+
+  errs(f) {
+    const e = {};
+    if (f.name.trim().length < 2) e.name = 'Diga como podemos te chamar.';
+    const em = f.email.trim().toLowerCase();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em)) e.email = 'Confira o e-mail. Exemplo: voce@empresa.com.br';
+    else if ((this.props.blockFreeEmail ?? true) && FREE.includes(em.split('@')[1])) e.email = 'Use o e-mail da empresa para montarmos a proposta certa.';
+    const d = f.phone.replace(/\D/g,'');
+    if (d.length < 10 || d.length > 11) e.phone = 'Informe o WhatsApp com DDD.';
+    return e;
+  }
+  upd(key, patch) { this.setState(s => ({ forms:{ ...s.forms, [key]:{ ...s.forms[key], ...(typeof patch === 'function' ? patch(s.forms[key]) : patch) } } })); }
+  formVals(key) {
+    const f = this.state.forms[key], e = this.errs(f);
+    const shown = k => (f.touched[k] || f.tried) ? (e[k] || '') : '';
+    const o = { name:f.name, email:f.email, phone:f.phone, loading:f.status === 'loading', idle:f.status !== 'loading', success:f.status === 'success', open:f.status !== 'success', first:(f.name.trim().split(/\s+/)[0] || '') };
+    [['name','Name'],['email','Email'],['phone','Phone']].forEach(([k, K]) => {
+      const err = shown(k), foc = f.focus === k;
+      o[k + 'Err'] = err; o[k + 'Invalid'] = err ? 'true' : 'false';
+      o[k + 'Ok'] = !err && !foc && f.touched[k] && !e[k];
+      o[k + 'Border'] = err ? '#e06b6d' : foc ? '#538bc5' : o[k + 'Ok'] ? '#534a3d' : '#3a3129';
+      o[k + 'Ring'] = foc ? (err ? '0 0 0 4px rgba(224,107,109,.2)' : '0 0 0 4px rgba(83,139,197,.25)') : 'none';
+      o['focus' + K] = () => this.upd(key, { focus:k });
+      o['blur' + K] = () => this.upd(key, s => ({ focus:'', touched:{ ...s.touched, [k]: s[k].length > 0 || s.touched[k] || false } }));
+    });
+    o.emailMsg = o.emailErr || ''; o.emailMsgColor = o.emailErr ? '#f4b3b4' : '#a8a3a3'; o.emailRole = o.emailErr ? 'alert' : undefined;
+    o.phoneMsg = o.phoneErr || ''; o.phoneMsgColor = o.phoneErr ? '#f4b3b4' : '#a8a3a3'; o.phoneRole = o.phoneErr ? 'alert' : undefined;
+    o.onName = ev => this.upd(key, { name: ev.target.value.slice(0, 80) });
+    o.onEmail = ev => this.upd(key, { email: ev.target.value.trim().slice(0, 120) });
+    o.onPhone = ev => this.upd(key, { phone: maskPhone(ev.target.value) });
+    o.submit = ev => {
+      ev.preventDefault();
+      const cur = this.state.forms[key], er = this.errs(cur);
+      const bad = ['name','email','phone'].find(k => er[k]);
+      if (bad) { this.upd(key, { tried:true }); const el = document.getElementById(key + '-' + bad); el && el.focus(); return; }
+      this.upd(key, { status:'loading' });
+      // Protótipo: simula a resposta. No HubSpot, o sucesso vem do callback onFormSubmitted do formulário nativo.
+      setTimeout(() => {
+        this.upd(key, { status:'success' });
+        if (!this.leadSent) { this.leadSent = true; (window.dataLayer = window.dataLayer || []).push({ event:'salvy_lead_submitted', form_location:key }); }
+      }, 1300);
+    };
+    return o;
+  }
+  goForm = ev => {
+    ev && ev.preventDefault();
+    const el = document.getElementById('proposta') || this.heroFormRef.current;
+    if (!el) return;
+    const top = el.getBoundingClientRect().top + window.scrollY - 96;
+    window.scrollTo({ top, behavior: this.reduced ? 'auto' : 'smooth' });
+    setTimeout(() => { const n = document.getElementById('hero-name'); n && n.focus({ preventScroll:true }); }, this.reduced ? 0 : 650);
+  };
+
+  renderVals() {
+    const s = this.state, wide = s.w >= 960;
+    const hl = this.props.headline ?? 'Sem 0800, sem fidelidade';
+    const vis = (cur, n) => ({ opacity: cur >= n ? 1 : 0, transform: cur >= n ? 'none' : 'translateY(10px)', transition:`opacity .55s ${EASE}, transform .55s ${EASE}` });
+    const visStr = (cur, n) => ({ o: cur >= n ? '1' : '0', t: cur >= n ? 'none' : 'translateY(10px)' });
+    const hero = this.state.forms.hero;
+    const first = hero.name.trim().split(/\s+/)[0];
+    const active = s.tick % 2 === 1;
+    const ln = NUMS[Math.floor(s.tick / 2) % NUMS.length];
+    const tk = { label: first ? 'Linha de ' + first.slice(0, 18) : 'Sua próxima linha', number: ln[0], type: ln[1], status: active ? 'ativa' : 'ativando', bg: active ? '#325332' : '#3a3129', fg: active ? '#e0ebd6' : '#f6f1cb' };
+
+    const cat = CATS[s.cat];
+    const sc = SCENS[s.scen], st = s.step;
+    const rows = sc.painel.rows.map(r => {
+      const changed = r.v2 && st >= 3, tone = changed ? r.tone2 : r.tone, t = TONES[tone];
+      return { k:r.k, v: changed ? r.v2 : r.v, bg: t ? t[0] : 'transparent', fg: t ? t[1] : '#181410', pad: t ? '6px 10px' : '0', ls: r.mono ? '.08em' : '0' };
+    });
+    const bars = (sc.painel.bars || []).map(([label, w]) => ({ label, w: st >= 2 ? w : '0%' }));
+    const actions = (sc.painel.actions || []).map((label, i) => { const on = i === sc.painel.act && st >= 2; return { label, bg: on ? '#232323' : 'transparent', fg: on ? '#fbfaf9' : '#4f4a4a' }; });
+    const chipLabels = ['Pedido feito','Processando','Enviado','Entregue'];
+    const ps = s.pstep;
+    const chipI = Math.max(0, Math.min(3, ps - 1));
+
+    return {
+      planPanelRef: this.planPanelRef, planCols: s.w >= 820 ? 'repeat(3,minmax(0,1fr))' : (s.w >= 560 ? 'repeat(2,minmax(0,1fr))' : 'minmax(0,1fr)'),
+      planTabs: PLAN_TABS.map(t => { const sel = (s.planTab || 'dados') === t.id; return { label:t.label, sel: sel ? 'true' : 'false', bg: sel ? '#181410' : 'transparent', fg: sel ? '#fbfaf9' : '#4f4a4a', sh: sel ? '4px 4px 12px rgba(29,41,57,.18)' : 'none', filter:'none', icon: t.wa ? 'assets/logo-whatsapp.svg' : 'data:image/svg+xml,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="' + (sel ? '#fbfaf9' : '#4f4a4a') + '" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">' + t.icon + '</svg>'), onClick: () => this.setPlanTab(t.id) }; }),
+      planHead: { title: PLANS[s.planTab || 'dados'].title, sub: PLANS[s.planTab || 'dados'].sub },
+      plans: PLANS[s.planTab || 'dados'].list.map(p => ({ name:p.name, price:p.price.toFixed(2).replace('.', ','), badge:p.badge || '', feats:p.feats })),
+      wide, navBorder: s.scrolled ? 'rgba(195,181,160,.45)' : 'transparent', navBg: s.scrolled ? 'rgba(247,245,242,.78)' : '#f7f5f2', navBlur: s.scrolled ? 'saturate(1.4) blur(14px)' : 'none',
+      hA: hl === 'Sem 0800, sem fidelidade', hB: hl === 'Operadora num painel só', hC: hl === 'Planos sem fidelidade (controle)',
+      ctaLabel: this.props.cta ?? 'Quero minha proposta',
+      tk, hf: this.formVals('hero'), ff: this.formVals('final'), mf: this.formVals('modal'),
+      modalOpen: s.modalOpen, modalCardRef:this.modalCardRef, modalBgRef:this.modalBgRef, openModal: e => this.openModal(e), closeModal: e => this.closeModal(e),
+      heroFormRef:this.heroFormRef, marqueeRef:this.marqueeRef, marqueePause: () => this.marquee && this.marquee.pause(), marqueePlay: () => this.marquee && this.marquee.play(),
+      logosLoop: [0,1].flatMap(r => LOGOS.map(([name, src]) => ({ src, alt: r ? '' : name, dup: r ? 'true' : 'false' }))), tkNumRef:this.tkNumRef, tkBarRef:this.tkBarRef, shotRef:this.shotRef, phoneRef:this.phoneRef, finalRef:this.finalRef, goForm:this.goForm,
+      sticky: s.sticky, footPad: s.w < 900 ? '72px' : '0px',
+      logos: LOGOS.map(([name, src], i) => ({ name, src, delay: String((i % 5) * 60) })),
+      pains: PAINS,
+      cats: CATS.map((c, i) => ({ ...c, active: i === s.cat, line: i === s.cat ? '#181410' : '#ddd5c8', fg: i === s.cat ? '#181410' : '#807a7a', kfg: i === s.cat ? '#534a3d' : '#807a7a', onClick: () => { this.setState({ cat:i }); this.runProd(CATS[i].items[0]); } })),
+      prodList: cat.items.map(id => { const p = PRODS[id], on = id === s.prod; return { ...p, isNew: !!p.isNew, active: on, bg: on ? '#fff' : 'transparent', shadow: on ? '-8px -8px 24px rgba(255,255,255,.5),8px 8px 24px rgba(35,35,35,.06)' : 'none', fg: on ? '#181410' : '#4f4a4a', onClick: () => this.runProd(id) }; }),
+      isAuto: s.cat === 2,
+      scanTop: ps >= 1 && ps < 3 ? '96px' : '12px',
+      rings: [['Internet','5 GB de 10 GB',.5,'#538bc5'],['SMS','12 de 50',.24,'#0e816c'],['Ligações','Ilimitadas',1,'#be3790']].map(([label, val, pct, color], i) => ({ label, val, color, off: String(ps >= i + 1 ? 188.5 * (1 - pct) : 188.5) })),
+      mdmScreen: ps >= 2 ? '#181410' : '#f7f5f2', mdmIcon: ps >= 2 ? '#fbfaf9' : '#7e7261', mdmLabel: ps >= 2 ? 'Modo perdido' : 'Aparelho da empresa',
+      demo: (() => { const D = DEMOS[s.prod]; return { head:D.head, logos:!!D.logos, tag:D.tag, foot:D.foot, rows: D.rows.map(([title, sub, badge, tone, kind], i, arr) => { const v = visStr(ps, i + 1), ink = tone === 'ink', t = DTONE[tone]; return { title, sub, badge, o:v.o, t:v.t, line: i === arr.length - 1 ? 'transparent' : '#efefef', ff: kind === 'mono' ? "'JetBrains Mono',monospace" : 'Inter,sans-serif', ls: kind === 'mono' ? '.06em' : '0', bff: ink ? 'Poppins,sans-serif' : 'Inter,sans-serif', bfs: ink ? '24px' : (/^\d+$/.test(badge) ? '15px' : '12px'), bpad: ink ? '0' : (/^\d+$/.test(badge) ? '7px 12px' : '6px 10px'), bg: ink ? 'transparent' : t[0], fg: ink ? '#181410' : t[1] }; }) }; })(),
+      d: Object.fromEntries(Object.keys(PRODS).map(k => [k, s.prod === k])),
+      p1: visStr(ps, 1), p2: visStr(ps, 2), p3: visStr(ps, 3), p4: visStr(ps, 4),
+      chipSteps: chipLabels.map((label, i) => ({ label, bar: ps >= i + 1 ? '#181410' : '#ddd5c8', fg: ps >= i + 1 ? '#181410' : '#a8a3a3' })),
+      chipBadge: { label: chipLabels[chipI].toLowerCase(), bg: chipI === 3 ? '#e0ebd6' : '#d9e4f2', fg: chipI === 3 ? '#325332' : '#203f60' },
+      esimSteps: [['01','O colaborador recebe o QR Code'],['02','Ativa pelo app Salvy'],['03','Usa a linha em minutos']].map(([n, t], i) => ({ n, t, vis: visStr(ps, i + 2) })),
+      gplans: ['5 GB','10 GB','15 GB'].map((label, i) => { const on = i === s.gplan; return { label, active:on, border: on ? '#181410' : '#dad8d8', bg: on ? '#181410' : '#fff', fg: on ? '#fbfaf9' : '#232323', onClick: () => this.setState({ gplan:i }) }; }),
+      mdmRows: [['Aparelho perdido: acesso bloqueado','','remoto'],['Localização do aparelho','','remoto'],['Apps autorizados pela empresa','','política'],['Aparelho novo configurado por QR Code','','QR Code']].map(([t, s2, b], i) => ({ t, s:s2, b, vis: visStr(ps, i + 1) })),
+      apiLog: [['10:48','ERP','O mês fechou. Fatura e consumo já estão no seu ERP.'],['10:45','RH','Bruno Lima foi desligado. Linha bloqueada no mesmo minuto.'],['10:42','Produto','Um cliente novo pediu atendimento no WhatsApp. Número virtual criado para ele.'],['10:39','RH','Ana Ribeiro foi admitida. Linha ativada e vinculada a ela.']].map(([time, sys, text], i) => ({ time, sys, text, vis: visStr(ps, i + 1) })),
+      scens: SCENS.map((x, i) => ({ label:x.label, active: i === s.scen, bg: i === s.scen ? '#fbfaf9' : 'transparent', fg: i === s.scen ? '#181410' : '#ede9e2', border: i === s.scen ? '#fbfaf9' : '#534a3d', onClick: () => this.runScen(i) })),
+      sc: {
+        painel: { title: sc.painel.title, rows, bars, actions, hasActions: actions.length > 0, alert: sc.painel.alert || '', alertBadge: sc.painel.alertBadge || '', caption: sc.painel.caption },
+        chat: { ...sc.chat, t2: st >= 4 ? sc.chat.t2 : sc.chat.w2, l2c: st >= 4 ? '#8fc792' : '#c3b5a0' },
+        api: sc.api
+      },
+      v1: visStr(st, 1), v2: visStr(st, 2), v3: visStr(st, 3), v4: visStr(st, 4),
+      apiLine: st >= 2 ? '100%' : '0%',
+      typingO: st === 2 ? '1' : '0', apiDotO: st >= 2 ? '1' : '0',
+      sp: (() => { const p = SIMPLE[s.scen], ch = st >= 3, t = TONES[(ch ? p.to : p.from)[1]]; return { who:p.who, sub:p.sub, ff: p.mono ? "'JetBrains Mono',monospace" : 'Inter,sans-serif', ls: p.mono ? '.06em' : '0', status:(ch ? p.to : p.from)[0], bg:t[0], fg:t[1], action:p.action, btnShadow: st === 2 ? 'inset 4px 4px 12px rgba(0,0,0,.5)' : 'none', curO: st >= 1 && st < 4 ? '1' : '0', curT: st >= 2 ? 'translate(0,0)' : 'translate(40px,36px)', answer:p.answer, done:p.done }; })(),
+      difs: DIFS.map(([t, d], i) => ({ t, d, icon: 'data:image/svg+xml,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#181410" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">' + DIF_ICONS[i] + '</svg>') })),
+      caseDir: s.w < 760 ? 'row' : 'column', caseTabsMax: s.w < 760 ? '100%' : '280px',
+      caseTabs: CASES.map((c, i) => ({ co:c.co, sector:c.sector, active: i === s.caseI, bg: i === s.caseI ? '#fbfaf9' : 'transparent', shadow: i === s.caseI ? '-8px -8px 24px rgba(255,255,255,.5),8px 8px 24px rgba(35,35,35,.05)' : 'none', fg: i === s.caseI ? '#181410' : '#534a3d', onClick: () => this.setState({ caseI:i }) })),
+      cs: { ...CASES[s.caseI], logo: CASE_LOGOS[CASES[s.caseI].co] || '', logoH: CASES[s.caseI].co === 'Wiser' ? '64px' : '32px', logoM: CASES[s.caseI].co === 'Wiser' ? '-16px 0 -16px 0' : '0', noLogo: !CASE_LOGOS[CASES[s.caseI].co], size: CASES[s.caseI].big.length > 6 ? 'clamp(56px,8vw,120px)' : 'clamp(80px,12vw,176px)' },
+      faqs: FAQS.map(([q, a], i) => { const open = s.faq === i; return { q, a, open, bid:'faq-b' + i, pid:'faq-p' + i, rot: open ? '45deg' : '0deg', iconBg: open ? '#181410' : '#ede9e2', iconFg: open ? '#fbfaf9' : '#181410', onClick: () => this.setState({ faq: open ? -1 : i }) }; })
+    };
+  }
+}
+</script>
+</body>
+</html>

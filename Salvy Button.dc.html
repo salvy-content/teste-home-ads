@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet><style>@keyframes sv-btn-spin{to{transform:rotate(360deg)}}</style></helmet>
+<sc-if value="{{ isLink }}" hint-placeholder-val="{{ true }}">
+<a href="{{ href }}" onClick="{{ onClick }}" data-track="{{ track }}" onMouseEnter="{{ enter }}" onMouseLeave="{{ leave }}" onMouseDown="{{ down }}" onMouseUp="{{ up }}" onFocus="{{ enter }}" onBlur="{{ leave }}" style="position:relative;overflow:hidden;isolation:isolate;display:{{ disp }};width:{{ w }};align-items:center;justify-content:space-between;gap:16px;height:{{ h }};padding:0 {{ padR }} 0 {{ padL }};box-sizing:border-box;border-radius:10px;background:{{ bg }};font-family:Inter,sans-serif;font-weight:600;font-size:{{ fs }};line-height:1;text-decoration:none;white-space:nowrap;box-shadow:{{ shadow }};transition:box-shadow .25s cubic-bezier(.16,1,.3,1)">
+  <span aria-hidden="true" style="position:absolute;z-index:-1;top:{{ inset }};right:{{ padR }};height:{{ chip }};width:{{ fillW }};border-radius:7px;background:{{ chipBg }};transition:width .55s cubic-bezier(.16,1,.3,1)"></span>
+  <span style="color:{{ textFg }};transform:translateX({{ textX }});transition:color .45s cubic-bezier(.16,1,.3,1),transform .45s cubic-bezier(.16,1,.3,1)">{{ label }}</span>
+  <span aria-hidden="true" style="position:relative;display:block;flex:none;width:{{ chip }};height:{{ chip }};color:{{ chipFg }};overflow:hidden">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="position:absolute;left:50%;top:50%;margin:-8px 0 0 -8px;transform:translateX({{ a1 }});transition:transform .45s cubic-bezier(.16,1,.3,1)"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="position:absolute;left:50%;top:50%;margin:-8px 0 0 -8px;transform:translateX({{ a2 }});transition:transform .45s cubic-bezier(.16,1,.3,1)"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+  </span>
+</a>
+</sc-if>
+<sc-if value="{{ isSubmit }}">
+<button type="submit" disabled="{{ loading }}" data-track="{{ track }}" onMouseEnter="{{ enter }}" onMouseLeave="{{ leave }}" onMouseDown="{{ down }}" onMouseUp="{{ up }}" onFocus="{{ enter }}" onBlur="{{ leave }}" style="all:unset;cursor:pointer;position:relative;overflow:hidden;isolation:isolate;display:flex;width:100%;align-items:center;justify-content:space-between;gap:16px;height:{{ h }};padding:0 {{ padR }} 0 {{ padL }};box-sizing:border-box;border-radius:10px;background:{{ bg }};font-family:Inter,sans-serif;font-weight:600;font-size:16px;line-height:1;white-space:nowrap;box-shadow:{{ shadow }};transition:box-shadow .25s cubic-bezier(.16,1,.3,1)">
+  <span aria-hidden="true" style="position:absolute;z-index:-1;top:{{ inset }};right:{{ padR }};height:{{ chip }};width:{{ fillW }};border-radius:7px;background:{{ chipBg }};transition:width .55s cubic-bezier(.16,1,.3,1)"></span>
+  <span style="color:{{ textFg }};transform:translateX({{ textX }});transition:color .45s cubic-bezier(.16,1,.3,1),transform .45s cubic-bezier(.16,1,.3,1)">{{ shownLabel }}</span>
+  <span aria-hidden="true" style="position:relative;display:block;flex:none;width:{{ chip }};height:{{ chip }};color:{{ chipFg }};overflow:hidden">
+    <sc-if value="{{ loading }}"><span style="position:absolute;left:50%;top:50%;width:16px;height:16px;margin:-8px 0 0 -8px;border-radius:50%;border:2px solid {{ spinTrack }};border-top-color:{{ chipFg }};box-sizing:border-box;display:block;animation:sv-btn-spin .7s linear infinite"></span></sc-if>
+    <sc-if value="{{ notLoading }}" hint-placeholder-val="{{ true }}">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="position:absolute;left:50%;top:50%;margin:-8px 0 0 -8px;transform:translateX({{ a1 }});transition:transform .45s cubic-bezier(.16,1,.3,1)"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="position:absolute;left:50%;top:50%;margin:-8px 0 0 -8px;transform:translateX({{ a2 }});transition:transform .45s cubic-bezier(.16,1,.3,1)"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+    </sc-if>
+  </span>
+</button>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:320,&quot;height&quot;:120},&quot;label&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Quero minha proposta&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;href&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;#proposta&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;variant&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;ink&quot;,&quot;paper&quot;],&quot;default&quot;:&quot;ink&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;size&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;md&quot;,&quot;sm&quot;],&quot;default&quot;:&quot;md&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;kind&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;link&quot;,&quot;submit&quot;],&quot;default&quot;:&quot;link&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;full&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;},&quot;loading&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;},&quot;track&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;onClick&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;(e) =&gt; void&quot;}}">
+class Component extends DCLogic {
+  state = { hover:false, press:false };
+  renderVals() {
+    const p = this.props, s = this.state;
+    const paper = (p.variant ?? 'ink') === 'paper', sm = (p.size ?? 'md') === 'sm', submit = (p.kind ?? 'link') === 'submit';
+    const loading = !!p.loading, hov = s.hover || loading;
+    const H = sm ? 44 : (submit ? 56 : 54), C = sm ? 34 : (submit ? 42 : 40), PR = sm ? 5 : 7;
+    return {
+      isLink: !submit, isSubmit: submit, loading, notLoading: !loading,
+      href: p.href ?? '#proposta', onClick: p.onClick, track: p.track ?? '', label: p.label ?? 'Quero minha proposta',
+      shownLabel: loading ? 'Enviando…' : (p.label ?? 'Quero minha proposta'),
+      disp: p.full ? 'flex' : 'inline-flex', w: p.full ? '100%' : 'auto',
+      h: H + 'px', padL: sm ? '16px' : '20px', padR: PR + 'px', fs: sm ? '14px' : '15px', chip: C + 'px', inset: ((H - C) / 2) + 'px',
+      fillW: hov ? `calc(100% - ${PR * 2}px)` : C + 'px',
+      bg: paper ? '#fbfaf9' : '#232323',
+      textFg: hov ? (paper ? '#fbfaf9' : '#181410') : (paper ? '#181410' : '#fbfaf9'),
+      textX: hov ? '4px' : '0px',
+      chipBg: paper ? '#181410' : '#fbfaf9', chipFg: paper ? '#fbfaf9' : '#181410', spinTrack: paper ? '#534a3d' : '#ddd5c8',
+      shadow: s.press ? (paper ? 'inset 4px 4px 10px rgba(0,0,0,.18)' : 'inset 4px 4px 12px rgba(0,0,0,.45)') : s.hover ? (paper ? '0 0 0 4px rgba(251,250,249,.14)' : '-8px -8px 24px rgba(255,255,255,.5),8px 8px 32px rgba(29,41,57,.24)') : 'none',
+      a1: hov ? '28px' : '0px', a2: hov ? '0px' : '-28px',
+      enter: () => this.setState({ hover:true }), leave: () => this.setState({ hover:false, press:false }),
+      down: () => this.setState({ press:true }), up: () => this.setState({ press:false })
+    };
+  }
+}
+</script>
+</body>
+</html>

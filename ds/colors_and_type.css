@@ -1,0 +1,255 @@
+/*
+ * Salvy Design System — Colors & Type
+ *
+ * Fonts: Poppins (display/headings), Inter (body/sans), JetBrains Mono (mono)
+ * Source: SalvyLTD/salvy-dashboard src/styles/globals.css
+ */
+
+/* Google Fonts — load via <link> or @import in consuming HTML:
+ * https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap
+ */
+
+:root {
+  /* ——— Type families ——— */
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Poppins", "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* ——— Core neutrals ——— */
+  --color-white: #ffffff;
+  --color-black: #181410;
+
+  /* Brand nudes (warm paper) — the hero palette of the product */
+  --color-brand-0: #ffffff;
+  --color-brand-50: #fbfaf9;
+  --color-brand-100: #f7f5f2;
+  --color-brand-200: #f4f2ee;
+  --color-brand-300: #ede9e2;
+  --color-brand-400: #ddd5c8;
+  --color-brand-500: #c3b5a0;
+  --color-brand-600: #7e7261;
+  --color-brand-700: #534a3d;
+  --color-brand-800: #372d23;
+  --color-brand-900: #181410;
+
+  /* Gray scale (text + chrome) */
+  --color-gray-0:   #ffffff;
+  --color-gray-50:  #f9f9f9;
+  --color-gray-100: #efefef;
+  --color-gray-200: #dad8d8;
+  --color-gray-300: #cbcbcb;
+  --color-gray-400: #a8a3a3;
+  --color-gray-500: #807a7a;
+  --color-gray-600: #4f4a4a;
+  --color-gray-700: #373737;
+  --color-gray-800: #232323;
+  --color-gray-900: #141414;
+
+  /* Semantic accents */
+  --color-blue-50:  #e4ecf6;
+  --color-blue-100: #d9e4f2;
+  --color-blue-500: #538bc5;
+  --color-blue-600: #2f5d8d;
+  --color-blue-700: #203f60;
+
+  --color-magenta-100: #f7daea;
+  --color-magenta-500: #be3790;
+  --color-magenta-600: #a6307e;
+  --color-magenta-700: #8b1865;
+
+  --color-red-100: #f8d6d8;
+  --color-red-500: #be3739;
+  --color-red-600: #ac1e21;
+  --color-red-700: #8e141c;
+
+  --color-green-100: #e0ebd6;
+  --color-green-500: #4b9b4e;
+  --color-green-600: #3e7440;
+  --color-green-700: #325332;
+
+  --color-teal-100: #d7eae6;
+  --color-teal-500: #40bfa9;
+  --color-teal-600: #0e816c;
+  --color-teal-700: #0b6555;
+
+  --color-yellow-100: #f6f1cb;
+  --color-yellow-500: #ce9e24;
+  --color-yellow-600: #8f6619;
+  --color-yellow-700: #6d4d13;
+
+  /* ——— Semantic color tokens ——— */
+  --bg-app:        var(--color-brand-100);    /* default app canvas (warm paper) */
+  --bg-surface:    var(--color-white);        /* cards, sheets */
+  --bg-muted:      var(--color-brand-200);    /* subtle fill (chips, hover) */
+  --bg-inverse:    var(--color-gray-800);
+
+  --fg-1:          var(--color-gray-800);     /* primary text */
+  --fg-2:          var(--color-gray-600);     /* secondary text */
+  --fg-3:          var(--color-gray-500);     /* tertiary / captions */
+  --fg-disabled:   var(--color-gray-300);
+  --fg-inverse:    var(--color-gray-50);
+  --fg-link:       var(--color-gray-800);
+
+  --border-subtle: var(--color-gray-200);
+  --border-strong: var(--color-gray-300);
+  --border-focus:  var(--color-blue-500);
+
+  --accent-positive: var(--color-green-600);
+  --accent-positive-bg: var(--color-green-100);
+  --accent-warning:  var(--color-yellow-600);
+  --accent-warning-bg:  var(--color-yellow-100);
+  --accent-danger:   var(--color-red-600);
+  --accent-danger-bg:   var(--color-red-100);
+  --accent-info:     var(--color-blue-600);
+  --accent-info-bg:     var(--color-blue-100);
+
+  /* ——— Radii ——— */
+  --radius-2xs: 0.0625rem;  /* 1px */
+  --radius-xs:  0.25rem;    /* 4px */
+  --radius-sm:  0.375rem;   /* 6px */
+  --radius-md:  0.5rem;     /* 8px — default buttons/inputs */
+  --radius-lg:  0.75rem;    /* 12px — cards */
+  --radius-xl:  1rem;       /* 16px — large sheets */
+  --radius-2xl: 1.5rem;     /* 24px — hero cards */
+  --radius-full: 9999px;
+
+  /* ——— Spacing scale (4px base) ——— */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-5:  1.25rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  /* ——— Neumorphic shadow system ———
+   * Two-lobe: white lift on top-left + soft dark on bottom-right.
+   * This is a distinctive Salvy signature — used on cards, featured icons,
+   * primary button hover, etc.
+   */
+  --shadow-xs: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  --shadow-05:
+    -8px -8px 24px 0px rgba(255, 255, 255, 0.5),
+     8px  8px 24px 0px rgba(35, 35, 35, 0.05);
+  --shadow-1:
+    -8px -8px 24px 0px rgba(255, 255, 255, 0.5),
+     8px  8px 24px 0px rgba(29, 41, 57, 0.15);
+  --shadow-2:
+    -8px -8px 24px 0px rgba(255, 255, 255, 0.5),
+     8px  8px 32px 0px rgba(29, 41, 57, 0.24);
+  --shadow-inner-1:
+    -8px -8px 40px 0px rgba(255, 255, 255, 0.5) inset,
+     8px  8px 40px 0px rgba(29, 41, 57, 0.10)  inset;
+  --shadow-inner-2:
+    -8px -8px 16px 0px rgba(255, 255, 255, 0.5) inset,
+     8px  8px 16px 0px rgba(29, 41, 57, 0.16)  inset;
+  --shadow-featured-icon:
+    -2.56px -2.56px 7.68px 0px rgba(255, 255, 255, 0.5),
+     2.56px  2.56px 7.68px 0px rgba(35, 35, 35, 0.09);
+
+  /* ——— Type scale ——— */
+  --text-2xs: 0.625rem;   /* 10px */
+  --text-xs:  0.75rem;    /* 12px */
+  --text-sm:  0.875rem;   /* 14px */
+  --text-md:  1rem;       /* 16px */
+  --text-lg:  1.125rem;   /* 18px */
+  --text-xl:  1.25rem;    /* 20px */
+  --text-2xl: 1.5rem;     /* 24px */
+
+  --text-display-2xs: 1.75rem;   /* 28px */
+  --text-display-xs:  2rem;      /* 32px */
+  --text-display-sm:  2.25rem;   /* 36px */
+  --text-display-md:  2.625rem;  /* 42px */
+  --text-display-lg:  3rem;      /* 48px */
+  --text-display-xl:  3.375rem;  /* 54px */
+  --text-display-2xl: 3.75rem;   /* 60px */
+
+  --leading-tight: 1.2;
+  --leading-normal: 1.5;
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* ——— Motion ——— */
+  --ease-out-quint: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-quint: cubic-bezier(0.87, 0, 0.13, 1);
+  --duration-fast: 100ms;
+  --duration-base: 150ms;
+  --duration-slow: 300ms;
+  --duration-xslow: 400ms;
+}
+
+/* ——— Base type utility classes ——— */
+
+.display-2xl, .display-xl, .display-lg, .display-md,
+.display-sm, .display-xs, .display-2xs,
+.h1, .h2, .h3 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-semibold);
+  color: var(--fg-1);
+  line-height: var(--leading-tight);
+  letter-spacing: -0.01em;
+}
+
+.display-2xl { font-size: var(--text-display-2xl); }
+.display-xl  { font-size: var(--text-display-xl); }
+.display-lg  { font-size: var(--text-display-lg); }
+.display-md  { font-size: var(--text-display-md); }
+.display-sm  { font-size: var(--text-display-sm); }
+.display-xs  { font-size: var(--text-display-xs); }
+.display-2xs { font-size: var(--text-display-2xs); }
+
+.h1 { font-size: var(--text-display-sm); }
+.h2 { font-size: var(--text-display-2xs); }
+.h3 { font-size: var(--text-2xl); }
+
+.body-xl, .body-lg, .body-md, .body-sm, .body-xs {
+  font-family: var(--font-sans);
+  color: var(--fg-1);
+  line-height: var(--leading-normal);
+  font-weight: var(--weight-regular);
+}
+.body-xl { font-size: var(--text-xl); }
+.body-lg { font-size: var(--text-lg); }
+.body-md { font-size: var(--text-md); }
+.body-sm { font-size: var(--text-sm); }
+.body-xs { font-size: var(--text-xs); }
+
+.label {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--fg-1);
+  line-height: var(--leading-normal);
+}
+.caption {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-regular);
+  color: var(--fg-2);
+  line-height: var(--leading-normal);
+}
+.mono {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-variant-numeric: tabular-nums;
+  color: var(--fg-1);
+}
+.number-md {
+  font-family: var(--font-sans);
+  font-size: var(--text-md);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.15rem;
+  font-weight: var(--weight-medium);
+}
+
+a.link {
+  color: var(--fg-link);
+  text-decoration: underline;
+  font-weight: var(--weight-semibold);
+}
